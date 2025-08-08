@@ -23,7 +23,7 @@
     async function fetchQuestion() {
       document.getElementById('answer').style.display = 'none';
       document.getElementById('revealAnswer').disabled = false;
-      const res = await fetch('http://localhost:3000/api/question');
+      const res = await fetch('/api/question');
       const data = await res.json();
       document.getElementById('question').textContent = data.question;
       document.getElementById('answer').textContent = data.answer;
