@@ -1,2 +1,0 @@
-# Quizetta
-Quiz questions.
