@@ -1,5 +1,5 @@
 // Replace this URL with the one you got from publishing your Google Sheet
-const SHEET_URL = 'YOUR_GOOGLE_SHEET_CSV_URL_HERE';
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTzBEVylxJgSMmJnClnCxupXuaV_v9ybkYgPlWxiDpmqBuy4JIi3pZByHKNyY-5KQDCTUadWsRyzaZr/pub?gid=0&single=true&output=csv';
 
 let questions = [];
 let currentQuestionIndex = -1;
