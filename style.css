@@ -82,9 +82,10 @@ button:hover {
 .footer-links a {
     display: block;
     margin-bottom: 15px;
-    text-decoration: none;
-    color: #333;
+    text-decoration: underline; /* Add an underline */
+    color: #007bff; /* Change the color to a standard blue */
 }
+
 
 .footer-links a:last-child {
     margin-bottom: 0;
