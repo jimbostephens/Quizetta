@@ -1,4 +1,5 @@
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTzBEVylxJgSMmJnClnCxupXuaV_v9ybkYgPlWxiDpmqBuy4JIi3pZByHKNyY-5KQDCTUadWsRyzaZr/pub?gid=0&single=true&output=csv'; // <-- Make sure this is correct
+// Replace this with your Google Sheet's public CSV URL
+const SHEET_URL = 'YOUR_GOOGLE_SHEET_CSV_URL'; 
 
 let questions = [];
 
@@ -7,64 +8,62 @@ const answerEl = document.getElementById('answer');
 const revealBtn = document.getElementById('reveal-btn');
 const nextBtn = document.getElementById('next-btn');
 
-// Fetch data from the Google Sheet
-async function fetchQuestions() {
-    console.log("Fetching questions from URL:", SHEET_URL); // Debugging line
-    try {
-        const response = await fetch(SHEET_URL);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+// Fetch and parse data from the Google Sheet
+function fetchQuestions() {
+    Papa.parse(SHEET_URL, {
+        download: true,
+        header: false,
+        complete: function(results) {
+            // The data is an array of arrays
+            const data = results.data;
+            
+            // Map the data into an array of objects
+            questions = data.slice(1).map(row => {
+                // Ensure the row has a question and an answer
+                if (row.length < 2 || !row[0] || !row[1]) return null;
+                
+                return {
+                    question: row[0].trim(),
+                    answer: row[1].trim()
+                };
+            }).filter(item => item !== null); // Filter out any bad rows
+
+            // Check if any questions were loaded
+            if (questions.length === 0) {
+                questionEl.textContent = 'No questions available. Please check your sheet data.';
+            } else {
+                getNextQuestion();
+            }
+        },
+        error: function(error) {
+            console.error('Error fetching questions:', error);
+            questionEl.textContent = 'Failed to load questions. Check the URL and sheet settings.';
         }
-        const text = await response.text();
-        const rows = text.trim().split('\n').slice(1); // Skip header row
-
-        questions = rows.map(row => {
-            const cells = row.match(/(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|([^,]*))+/g);
-            if (!cells || cells.length < 2) return null;
-
-            const question = cells[0].replace(/^"|"$/g, '').replace(/""/g, '"').trim();
-            const answerRaw = cells[1] ? cells[1] : '';
-            const answer = answerRaw.replace(/^"|"$/g, '').replace(/""/g, '"').trim();
-
-            return { question, answer };
-        }).filter(item => item !== null && item.question);
-
-        console.log("Successfully fetched questions:", questions); // Debugging line
-        getNextQuestion();
-    } catch (error) {
-        console.error('Error fetching questions:', error);
-        questionEl.textContent = 'Failed to load questions. Please check the Google Sheet URL and ensure it\'s published correctly.';
-    }
+    });
 }
 
-// Display a random question
+// Display a random question and hide the answer
 function getNextQuestion() {
-    if (questions.length === 0) {
-        questionEl.textContent = 'No questions available.';
-        answerEl.textContent = '';
-        return;
-    }
+    if (questions.length === 0) return;
 
     const randomIndex = Math.floor(Math.random() * questions.length);
     const currentQuestion = questions[randomIndex];
 
-    console.log("Current Question:", currentQuestion.question); // Debugging line
-    console.log("Current Answer:", currentQuestion.answer); // Debugging line
-
     questionEl.textContent = currentQuestion.question;
     answerEl.textContent = currentQuestion.answer;
     
-    // Hide the answer
+    // Hide the answer element using a CSS class
     answerEl.classList.add('hidden');
 }
 
-// Event listeners for the buttons
+// Event listener for the "Reveal Answer" button
 revealBtn.addEventListener('click', () => {
-    console.log("Reveal button clicked."); // Debugging line
+    // Show the answer by removing the 'hidden' class
     answerEl.classList.remove('hidden');
 });
 
+// Event listener for the "Next Question" button
 nextBtn.addEventListener('click', getNextQuestion);
 
-// Initial fetch and display
+// Initial fetch and display when the page loads
 fetchQuestions();
