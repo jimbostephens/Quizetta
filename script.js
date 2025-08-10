@@ -15,16 +15,15 @@ async function fetchQuestions() {
         const rows = text.trim().split('\n').slice(1); // Skip header row
 
         questions = rows.map(row => {
-            // Use a more robust regex to handle commas inside quoted strings
             const cells = row.match(/(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|([^,]*))+/g);
-            if (!cells || cells.length < 2) return null; // Skip malformed rows
+            if (!cells || cells.length < 2) return null;
 
             const question = cells[0].replace(/^"|"$/g, '').replace(/""/g, '"').trim();
             const answerRaw = cells[1] ? cells[1] : '';
             const answer = answerRaw.replace(/^"|"$/g, '').replace(/""/g, '"').trim();
 
             return { question, answer };
-        }).filter(item => item !== null && item.question); // Filter out nulls and rows with no question
+        }).filter(item => item !== null && item.question);
 
         getNextQuestion();
     } catch (error) {
@@ -48,14 +47,14 @@ function getNextQuestion() {
     questionEl.textContent = currentQuestion.question;
     answerEl.textContent = currentQuestion.answer;
 
-    // Make sure the answer is hidden when a new question is loaded
-    answerEl.classList.add('hidden');
+    // Use inline style to hide the answer initially
+    answerEl.style.display = 'none';
 }
 
 // Event listeners for the buttons
 revealBtn.addEventListener('click', () => {
-    // Reveal the answer by removing the 'hidden' class
-    answerEl.classList.remove('hidden');
+    // Reveal the answer by setting display to 'block'
+    answerEl.style.display = 'block';
 });
 
 nextBtn.addEventListener('click', getNextQuestion);
