@@ -47,6 +47,7 @@ function getNextQuestion() {
     currentQuestionIndex = randomIndex;
 
     questionEl.textContent = questions[currentQuestionIndex].question;
+console.log("Current answer:", questions[currentQuestionIndex].answer;
     answerEl.textContent = questions[currentQuestionIndex].answer;
     answerEl.classList.add('hidden'); // Hide the answer initially
 }
