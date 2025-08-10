@@ -1,16 +1,14 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
 body {
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
     background-color: #f0f0f0;
+    margin: 0;
+    padding-bottom: 70px; 
+    box-sizing: border-box;
+    position: relative;
 }
 
 .container {
@@ -21,7 +19,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     width: 90%;
-    margin: 20px 0 100px; /* Adjusted bottom margin for the fixed footer */
+    margin: 20px 0;
 }
 
 h1 {
@@ -65,10 +63,23 @@ button:hover {
     display: none;
 }
 
-.bottom-link {
+/* This is the new styling for the footer links */
+.footer-links {
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bottom-link {
+    display: block; /* Ensures each link is on its own line */
+    margin: 5px 0;
+}
+
+.bottom-link a {
+    text-decoration: none;
+    color: #333;
 }
