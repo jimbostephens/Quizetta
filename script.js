@@ -21,7 +21,7 @@ async function fetchQuestions() {
             if (!cells || cells.length < 2) return null; // Skip malformed rows
 
             const question = cells[0].replace(/^"|"$/g, '').replace(/""/g, '"').trim();
-            const answer = cells[1].replace(/^"|"$/g, '').replace(/""/g, '"').trim();
+            const answer = cells[1] ? cells[1].replace(/^"|"$/g, '').replace(/""/g, '"').trim() : '';
             
             return { question, answer };
         }).filter(item => item !== null); // Filter out any null entries
