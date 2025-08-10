@@ -1,10 +1,9 @@
 body {
-    font-family: Arial, sans serif;
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    min-height: calc(var(--vh, 1vh) * 100); /* The new fix */
     background-color: #f0f0f0;
     margin: 0;
     padding-bottom: 70px;
@@ -47,7 +46,15 @@ h1 {
 }
 
 .buttons {
-    margin-top: 20px;
+    /* These are the key changes to fix the button position */
+    position: fixed;
+    top: 66.6%; /* Positions the buttons two-thirds of the way down the page */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    z-index: 10; /* Ensures buttons are on top of other content */
+    width: 100%;
 }
 
 button {
