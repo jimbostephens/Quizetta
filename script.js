@@ -1,25 +1,22 @@
-// This function sets the CSS variable for the viewport height, fixing mobile scrolling issues
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
+// This script contains all the logic for your Quizetta app.
+// It fetches data, handles question rotation, and controls the buttons.
 
-window.addEventListener('resize', () => {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
-
-// ... (rest of your existing script.js code follows here) ...
 // Replace this with your Google Sheet's public CSV URL
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTzBEVylxJgSMmJnClnCxupXuaV_v9ybkYgPlWxiDpmqBuy4JIi3pZByHKNyY-5KQDCTUadWsRyzaZr/pub?gid=0&single=true&output=csv';  
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTzBEVylxJgSMmJnClnCxupXuaV_v9ybkYgPlWxiDpmqBuy4JIi3pZByHKNyY-5KQDCTUadWsRyzaZr/pub?gid=0&single=true&output=csv'; 
 
-let questions = [];
+// Arrays to manage question state
+let allQuestions = [];
+let availableQuestions = [];
+let usedQuestions = [];
 
+// DOM element references
 const questionEl = document.getElementById('question');
 const answerEl = document.getElementById('answer');
 const revealBtn = document.getElementById('reveal-btn');
 const nextBtn = document.getElementById('next-btn');
 const loadingMessageEl = document.getElementById('loading-message');
 
-// Fetch and parse data from the Google Sheet
+// Fetch and parse data from the Google Sheet using PapaParse
 function fetchQuestions() {
     console.log("Attempting to fetch data...");
     Papa.parse(SHEET_URL, {
@@ -29,7 +26,7 @@ function fetchQuestions() {
             console.log("Data fetch complete.");
             const data = results.data;
             
-            questions = data.slice(1).map(row => {
+            allQuestions = data.slice(1).map(row => {
                 if (row.length < 2 || !row[0] || !row[1]) return null;
                 
                 return {
@@ -37,6 +34,9 @@ function fetchQuestions() {
                     answer: row[1].trim()
                 };
             }).filter(item => item !== null);
+            
+            // Initialize the quiz by populating the available questions
+            availableQuestions = [...allQuestions];
 
             // Hide loading message and show quiz elements
             loadingMessageEl.classList.add('hidden');
@@ -44,7 +44,7 @@ function fetchQuestions() {
             revealBtn.classList.remove('hidden');
             nextBtn.classList.remove('hidden');
 
-            if (questions.length === 0) {
+            if (availableQuestions.length === 0) {
                 questionEl.textContent = 'No questions available. Please check your sheet data.';
             } else {
                 getNextQuestion();
@@ -59,15 +59,26 @@ function fetchQuestions() {
 
 // Display a random question and hide the answer
 function getNextQuestion() {
-    if (questions.length === 0) return;
+    // If all questions have been used, reset the quiz
+    if (availableQuestions.length === 0) {
+        console.log("All questions used. Resetting the quiz.");
+        availableQuestions = [...allQuestions];
+        usedQuestions = [];
+    }
 
-    const randomIndex = Math.floor(Math.random() * questions.length);
-    const currentQuestion = questions[randomIndex];
+    const randomIndex = Math.floor(Math.random() * availableQuestions.length);
+    const currentQuestion = availableQuestions[randomIndex];
 
+    // Remove the question from the available list and add it to the used list
+    availableQuestions.splice(randomIndex, 1);
+    usedQuestions.push(currentQuestion);
+    
+    // Display the question and prepare the answer
     questionEl.textContent = currentQuestion.question;
     answerEl.textContent = currentQuestion.answer;
-    
     answerEl.classList.add('hidden');
+    
+    console.log(`Questions remaining: ${availableQuestions.length}`);
 }
 
 // Event listeners for the "Reveal Answer" and "Next Question" buttons
