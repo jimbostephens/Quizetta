@@ -1,4 +1,4 @@
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTzBEVylxJgSMmJnClnCxupXuaV_v9ybkYgPlWxiDpmqBuy4JIi3pZByHKNyY-5KQDCTUadWsRyzaZr/pub?gid=0&single=true&output=csv';
+const SHEET_URL = 'YOUR_GOOGLE_SHEET_CSV_URL'; // <-- Make sure this is correct
 
 let questions = [];
 
@@ -9,6 +9,7 @@ const nextBtn = document.getElementById('next-btn');
 
 // Fetch data from the Google Sheet
 async function fetchQuestions() {
+    console.log("Fetching questions from URL:", SHEET_URL); // Debugging line
     try {
         const response = await fetch(SHEET_URL);
         if (!response.ok) {
@@ -18,17 +19,17 @@ async function fetchQuestions() {
         const rows = text.trim().split('\n').slice(1); // Skip header row
 
         questions = rows.map(row => {
-            // Use a regex to handle commas inside quoted strings
             const cells = row.match(/(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|([^,]*))+/g);
-            if (!cells || cells.length < 2) return null; // Skip malformed rows
+            if (!cells || cells.length < 2) return null;
 
             const question = cells[0].replace(/^"|"$/g, '').replace(/""/g, '"').trim();
             const answerRaw = cells[1] ? cells[1] : '';
             const answer = answerRaw.replace(/^"|"$/g, '').replace(/""/g, '"').trim();
 
             return { question, answer };
-        }).filter(item => item !== null && item.question); // Filter out nulls and empty questions
+        }).filter(item => item !== null && item.question);
 
+        console.log("Successfully fetched questions:", questions); // Debugging line
         getNextQuestion();
     } catch (error) {
         console.error('Error fetching questions:', error);
@@ -47,6 +48,9 @@ function getNextQuestion() {
     const randomIndex = Math.floor(Math.random() * questions.length);
     const currentQuestion = questions[randomIndex];
 
+    console.log("Current Question:", currentQuestion.question); // Debugging line
+    console.log("Current Answer:", currentQuestion.answer); // Debugging line
+
     questionEl.textContent = currentQuestion.question;
     answerEl.textContent = currentQuestion.answer;
     
@@ -56,6 +60,7 @@ function getNextQuestion() {
 
 // Event listeners for the buttons
 revealBtn.addEventListener('click', () => {
+    console.log("Reveal button clicked."); // Debugging line
     answerEl.classList.remove('hidden');
 });
 
