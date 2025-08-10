@@ -1,4 +1,3 @@
-// Replace this URL with the one you got from publishing your Google Sheet
 const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTzBEVylxJgSMmJnClnCxupXuaV_v9ybkYgPlWxiDpmqBuy4JIi3pZByHKNyY-5KQDCTUadWsRyzaZr/pub?gid=0&single=true&output=csv';
 
 let questions = [];
@@ -17,9 +16,15 @@ async function fetchQuestions() {
         const rows = text.trim().split('\n').slice(1); // Skip header row
 
         questions = rows.map(row => {
-            const [question, answer] = row.split(',');
-            return { question: question.trim(), answer: answer.trim() };
-        });
+            // Use a more robust regex to handle commas inside quoted strings
+            const cells = row.match(/(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|([^,]*))+/g);
+            if (!cells || cells.length < 2) return null; // Skip malformed rows
+
+            const question = cells[0].replace(/^"|"$/g, '').replace(/""/g, '"').trim();
+            const answer = cells[1].replace(/^"|"$/g, '').replace(/""/g, '"').trim();
+            
+            return { question, answer };
+        }).filter(item => item !== null); // Filter out any null entries
 
         getNextQuestion();
     } catch (error) {
