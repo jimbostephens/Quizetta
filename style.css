@@ -6,7 +6,7 @@ body {
     min-height: 100vh;
     background-color: #f0f0f0;
     margin: 0;
-    padding-bottom: 70px; 
+    padding-bottom: 70px;
     box-sizing: border-box;
     position: relative;
 }
@@ -63,7 +63,7 @@ button:hover {
     display: none;
 }
 
-/* This is the new styling for the footer links */
+/* This is the new styling for the footer links container */
 .footer-links {
     position: fixed;
     bottom: 20px;
@@ -74,12 +74,9 @@ button:hover {
     align-items: center;
 }
 
-.bottom-link {
-    display: block; /* Ensures each link is on its own line */
+.footer-links a {
+    display: block;
     margin: 5px 0;
-}
-
-.bottom-link a {
     text-decoration: none;
     color: #333;
 }
