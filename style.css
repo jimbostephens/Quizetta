@@ -2,11 +2,13 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     height: 100vh;
     background-color: #f0f0f0;
     margin: 0;
+    padding: 20px 0;
+    box-sizing: border-box;
 }
 
 .container {
@@ -17,7 +19,10 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     width: 90%;
-    box-sizing: border-box;
+    /* Key changes for container */
+    flex-grow: 1; /* Allows the container to fill available space */
+    overflow-y: auto; /* Makes the container scrollable if content is too long */
+    margin-bottom: 20px; /* Space between container and image link */
 }
 
 h1 {
@@ -27,14 +32,14 @@ h1 {
 #question {
     font-size: 1.5em;
     margin: 20px 0;
-    min-height: 50px; /* Prevents layout shift */
+    min-height: 50px;
 }
 
 #answer {
     font-size: 1.2em;
     color: #007bff;
     font-weight: bold;
-    min-height: 30px; /* Prevents layout shift */
+    min-height: 30px;
 }
 
 .buttons {
@@ -62,5 +67,5 @@ button:hover {
 }
 
 .bottom-link {
-    margin-bottom: 20px; /* Adds space at the bottom */
+    flex-shrink: 0; /* Prevents the image link from shrinking */
 }
