@@ -47,14 +47,14 @@ function getNextQuestion() {
     questionEl.textContent = currentQuestion.question;
     answerEl.textContent = currentQuestion.answer;
 
-    // Use inline style to hide the answer initially
-    answerEl.style.display = 'none';
+    // Use the 'hidden' class to hide the answer
+    answerEl.classList.add('hidden');
 }
 
 // Event listeners for the buttons
 revealBtn.addEventListener('click', () => {
-    // Reveal the answer by setting display to 'block'
-    answerEl.style.display = 'block';
+    // Reveal the answer by removing the 'hidden' class
+    answerEl.classList.remove('hidden');
 });
 
 nextBtn.addEventListener('click', getNextQuestion);
