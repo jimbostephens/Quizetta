@@ -47,8 +47,8 @@ function getNextQuestion() {
     // Set the question and clear the answer from the display
     questionEl.textContent = currentQuestion.question;
     answerEl.textContent = currentQuestion.answer;
-    
-    // Use the `hidden` class to hide the answer
+
+    // Make sure the answer is hidden when a new question is loaded
     answerEl.classList.add('hidden');
 }
 
