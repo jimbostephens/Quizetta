@@ -6,7 +6,7 @@ body {
     min-height: 100vh;
     background-color: #f0f0f0;
     margin: 0;
-    padding-bottom: 70px; 
+    padding-bottom: 70px;
     box-sizing: border-box;
     position: relative;
 }
@@ -63,7 +63,6 @@ button:hover {
     display: none;
 }
 
-/* This is the new styling for the footer links */
 .footer-links {
     position: fixed;
     bottom: 20px;
@@ -72,14 +71,20 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 10px; /* Added some padding to prevent the text from touching the screen edges */
 }
 
-.bottom-link {
-    display: block; /* Ensures each link is on its own line */
-    margin: 5px 0;
-}
-
-.bottom-link a {
+.footer-links a {
+    display: block;
+    margin-bottom: 15px; /* Increased the margin for more space */
     text-decoration: none;
     color: #333;
+}
+
+.footer-links a:last-child {
+    margin-bottom: 0;
+}
+
+.email-link {
+    white-space: nowrap; /* This prevents the text from wrapping */
 }
