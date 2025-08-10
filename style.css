@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column; /* This is the key change */
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -17,6 +18,14 @@ body {
     max-width: 600px;
     width: 90%;
 }
+
+.bottom-link {
+    margin-top: auto; /* Pushes the link to the bottom */
+    margin-bottom: 20px; /* Optional: adds some space at the bottom */
+}
+
+/* ... (rest of your CSS) ... */
+
 
 h1 {
     color: #333;
