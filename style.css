@@ -3,12 +3,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f0f0f0;
     margin: 0;
-    padding: 20px 0;
+    padding-bottom: 70px; /* Add padding for the fixed footer */
     box-sizing: border-box;
+    position: relative;
 }
 
 .container {
@@ -19,10 +19,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     width: 90%;
-    /* Key changes for container */
-    flex-grow: 1; /* Allows the container to fill available space */
-    overflow-y: auto; /* Makes the container scrollable if content is too long */
-    margin-bottom: 20px; /* Space between container and image link */
+    margin: 20px 0;
 }
 
 h1 {
@@ -67,5 +64,9 @@ button:hover {
 }
 
 .bottom-link {
-    flex-shrink: 0; /* Prevents the image link from shrinking */
+    position: fixed; /* This is the key change */
+    bottom: 20px; /* Positions the link 20px from the bottom */
+    left: 50%; /* Moves the link to the horizontal center */
+    transform: translateX(-50%); /* Adjusts for the link's width to be perfectly centered */
+    margin: 0;
 }
