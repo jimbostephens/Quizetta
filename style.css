@@ -26,6 +26,12 @@ h1 {
     color: #333;
 }
 
+#loading-message {
+    font-size: 1.5em;
+    color: #555;
+    margin: 20px 0;
+}
+
 #question {
     font-size: 1.5em;
     margin: 20px 0;
@@ -71,12 +77,11 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 10px; /* Added some padding to prevent the text from touching the screen edges */
 }
 
 .footer-links a {
     display: block;
-    margin-bottom: 15px; /* Increased the margin for more space */
+    margin-bottom: 15px;
     text-decoration: none;
     color: #333;
 }
@@ -86,5 +91,5 @@ button:hover {
 }
 
 .email-link {
-    white-space: nowrap; /* This prevents the text from wrapping */
+    white-space: nowrap;
 }
