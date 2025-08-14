@@ -1,52 +1,88 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const csvUrl = 'q.csv';
-    let questions = [];
+const SHEET_URL = 'q.csv'; 
 
-    const questionElement = document.getElementById('question');
-    const answerElement = document.getElementById('answer');
-    const revealButton = document.getElementById('reveal-btn');
-    const nextButton = document.getElementById('next-btn');
+// Arrays to manage question state
+let allQuestions = [];
+let availableQuestions = [];
+let usedQuestions = [];
 
-    function fetchQuestions() {
-        Papa.parse(csvUrl, {
-            download: true,
-            header: true,
-            skipEmptyLines: true,
-            complete: function(results) {
-                questions = results.data;
-                if (questions.length > 0) {
-                    displayRandomQuestion();
-                } else {
-                    questionElement.textContent = "No questions found.";
-                }
-            },
-            error: function(err, file) {
-                questionElement.textContent = "Failed to load questions. Please check the network connection.";
-                console.error("Error parsing CSV:", err);
+// DOM element references
+const questionEl = document.getElementById('question');
+const answerEl = document.getElementById('answer');
+const revealBtn = document.getElementById('reveal-btn');
+const nextBtn = document.getElementById('next-btn');
+const loadingMessageEl = document.getElementById('loading-message');
+
+// Fetch and parse data using PapaParse
+function fetchQuestions() {
+    console.log("Attempting to fetch data...");
+    Papa.parse(SHEET_URL, {
+        download: true,
+        header: false,
+        complete: function(results) {
+            console.log("Data fetch complete.");
+            const data = results.data;
+
+            allQuestions = data.slice(1).map(row => {
+                if (row.length < 2 || !row[0] || !row[1]) return null;
+
+                return {
+                    question: row[0].trim(),
+                    answer: row[1].trim()
+                };
+            }).filter(item => item !== null);
+
+            // Initialize the quiz by populating the available questions
+            availableQuestions = [...allQuestions];
+
+            // Hide loading message and show quiz elements
+            loadingMessageEl.classList.add('hidden');
+            questionEl.classList.remove('hidden');
+            revealBtn.classList.remove('hidden');
+            nextBtn.classList.remove('hidden');
+
+            if (availableQuestions.length === 0) {
+                questionEl.textContent = 'No questions available. Please check your sheet data.';
+            } else {
+                getNextQuestion();
             }
-        });
-    }
-
-    function displayRandomQuestion() {
-        if (questions.length === 0) {
-            questionElement.textContent = "No questions available.";
-            return;
+        },
+        error: function(error) {
+            console.error('Error fetching questions:', error);
+            loadingMessageEl.textContent = 'Failed to load questions. Please check the URL and sheet settings.';
         }
-        const randomIndex = Math.floor(Math.random() * questions.length);
-        const randomQuestion = questions[randomIndex];
+    });
+}
 
-        questionElement.textContent = randomQuestion.Question;
-        answerElement.textContent = randomQuestion.Answer;
-        answerElement.classList.add('hidden'); // Hide answer initially
+// Display a random question and hide the answer
+function getNextQuestion() {
+    // If all questions have been used, reset the quiz
+    if (availableQuestions.length === 0) {
+        console.log("All questions used. Resetting the quiz.");
+        availableQuestions = [...allQuestions];
+        usedQuestions = [];
     }
 
-    revealButton.addEventListener('click', () => {
-        answerElement.classList.remove('hidden');
-    });
+    const randomIndex = Math.floor(Math.random() * availableQuestions.length);
+    const currentQuestion = availableQuestions[randomIndex];
 
-    nextButton.addEventListener('click', () => {
-        displayRandomQuestion();
-    });
+    // Remove the question from the available list and add it to the used list
+    availableQuestions.splice(randomIndex, 1);
+    usedQuestions.push(currentQuestion);
 
-    fetchQuestions();
+    // Display the question and prepare the answer
+    questionEl.textContent = currentQuestion.question;
+    answerEl.textContent = currentQuestion.answer;
+    answerEl.classList.add('hidden');
+
+    console.log(`Questions remaining: ${availableQuestions.length}`);
+}
+
+// Event listeners for the "Reveal Answer" and "Next Question" buttons
+revealBtn.addEventListener('click', () => {
+    answerEl.classList.remove('hidden');
 });
+
+nextBtn.addEventListener('click', getNextQuestion);
+
+// Initial fetch and display when the page loads
+fetchQuestions();
