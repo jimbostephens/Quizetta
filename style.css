@@ -23,11 +23,7 @@ body {
 }
 
 h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
-    font-weight: 500; /* Softer font weight */
-    font-size: 2.5em; /* Slightly adjusted size */
-    margin-bottom: 20px;
 }
 
 #loading-message {
