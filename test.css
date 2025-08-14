@@ -1,97 +1,139 @@
-body, html {
-    margin: 0;
-    padding: 0;
+/*
+ * General Styles
+ * A deep navy background with a gentle, sans-serif font and smooth transitions.
+ */
+body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #0E1A40; /* Deep blue background */
-    color: #F0F8FF; /* Off-white text */
-    text-align: center;
+    background-color: #0d1e3c; /* Deep navy blue background */
+    color: #333;
+    margin: 0;
     box-sizing: border-box;
 }
 
+/*
+ * Content Container
+ * A light grey card with soft shadows to make content pop.
+ */
 .container {
+    text-align: center;
+    background-color: #f7f7f7; /* Light grey content area */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
     width: 90%;
-    max-width: 400px;
-    padding: 20px;
-    box-sizing: border-box;
+    margin: 20px 0;
+    flex-grow: 1; /* Allows container to grow, pushing buttons down */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-grow: 1;
 }
 
+/*
+ * Headings
+ * A soft, calming blue for the title.
+ */
 h1 {
-    font-size: 2em;
+    color: #4a90e2; /* A calming, vibrant blue */
+    font-size: 2.5em;
     margin-bottom: 20px;
-    color: #4A90E2; /* Lighter blue for emphasis */
 }
 
-.question-box, .answer-box {
-    background-color: #1A2E59; /* Slightly lighter deep blue */
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 10px 0;
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/*
+ * Loading & Question Text
+ * A clean, readable style for the main text elements.
+ */
+#loading-message,
+#question {
+    font-size: 1.6em;
+    color: #555;
+    margin: 20px 0;
+    min-height: 50px;
+    line-height: 1.4;
 }
 
-p {
-    font-size: 1.2em;
-    margin: 0;
+/*
+ * Answer Text
+ * A distinct, bold style to highlight the answer.
+ */
+#answer {
+    font-size: 1.6em;
+    color: #3cb371; /* A gentle green for the answer */
+    font-weight: 600;
+    min-height: 30px;
+    margin-top: 10px;
 }
 
-#answer.hidden {
-    display: none;
-}
-
-.button-container {
+/*
+ * Button Container
+ * A fixed position at the bottom of the viewport for easy access.
+ */
+.buttons {
     position: fixed;
-    bottom: 0;
-    width: 100%;
+    bottom: 80px; /* Space for the footer links below */
+    left: 0;
+    right: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding: 15px;
-    box-sizing: border-box;
-    background-color: #0E1A40; /* Match body background */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
 }
 
+/*
+ * Buttons
+ * A vibrant blue with a smooth hover effect.
+ */
 button {
-    background-color: #4A90E2; /* Lighter blue for buttons */
-    color: #F0F8FF;
-    border: none;
     padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 1em;
+    margin: 0 15px;
+    font-size: 1.1em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 25px; /* Pill-shaped buttons */
+    color: #fff;
+    background-color: #4a90e2;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: #6EA9F1;
+    background-color: #357bd8;
+    transform: translateY(-2px); /* Subtle lift on hover */
 }
 
-.footer {
+/*
+ * Footer Links
+ * A clean, unobtrusive footer.
+ */
+.footer-links {
     position: fixed;
-    bottom: 80px; /* Adjust this value to place it above the buttons */
-    width: 100%;
+    bottom: 15px; /* Positioned at the very bottom */
+    left: 0;
+    right: 0;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
     gap: 10px;
-    padding-bottom: 10px;
-    box-sizing: border-box;
+    z-index: 100;
 }
 
-.contact-link {
-    color: #4A90E2;
+.footer-links a {
+    display: block;
     text-decoration: none;
-    font-size: 0.9em;
+    color: #8da4c8; /* Lighter blue for subtle links */
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #4a90e2; /* Highlight on hover */
+}
+
+.hidden {
+    display: none;
 }
