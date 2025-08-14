@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTzBEVylxJgSMmJnClnCxupXuaV_v9ybkYgPlWxiDpmqBuy4JIi3pZByHKNyY-5KQDCTUadWsRyzaZr/pub?gid=0&single=true&output=csv';
+    const csvUrl = 'q.csv';
     let questions = [];
 
     const questionElement = document.getElementById('question');
