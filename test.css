@@ -1,81 +1,59 @@
-/*
- * General Styles
- * A deep navy background with a gentle, sans-serif font and smooth transitions.
- */
 body {
+    /* A more deliberate color scheme and typography. */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #0d1e3c; /* Deep navy blue background */
+    background-color: #f4f7f9; /* A soft, off-white background */
     color: #333;
     margin: 0;
     box-sizing: border-box;
 }
 
-/*
- * Content Container
- * A light grey card with soft shadows to make content pop.
- */
 .container {
     text-align: center;
-    background-color: #f7f7f7; /* Light grey content area */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #fff; /* Pure white for a clean look */
+    padding: 30px; /* More padding for more breathing room */
+    border-radius: 16px; /* Softer, more modern rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* A more subtle and diffuse shadow */
     max-width: 600px;
     width: 90%;
     margin: 20px 0;
-    flex-grow: 1; /* Allows container to grow, pushing buttons down */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-grow: 1; /* Allows the content to fill available space */
 }
 
-/*
- * Headings
- * A soft, calming blue for the title.
- */
 h1 {
     color: #4a90e2; /* A calming, vibrant blue */
-    font-size: 2.5em;
+    font-size: 2.5em; /* Slightly larger heading */
     margin-bottom: 20px;
 }
 
-/*
- * Loading & Question Text
- * A clean, readable style for the main text elements.
- */
-#loading-message,
+#loading-message {
+    font-size: 1.6em; /* Slightly larger for better readability */
+    color: #777; /* Softer gray */
+    margin: 20px 0;
+}
+
 #question {
-    font-size: 1.6em;
-    color: #555;
+    font-size: 1.6em; /* Consistent with loading message */
     margin: 20px 0;
     min-height: 50px;
-    line-height: 1.4;
+    line-height: 1.4; /* Improved line spacing for readability */
 }
 
-/*
- * Answer Text
- * A distinct, bold style to highlight the answer.
- */
 #answer {
     font-size: 1.6em;
-    color: #3cb371; /* A gentle green for the answer */
-    font-weight: 600;
+    color: #3cb371; /* A gentle green for the answer, creates a positive contrast */
+    font-weight: 600; /* Bolder for emphasis */
     min-height: 30px;
-    margin-top: 10px;
 }
 
-/*
- * Button Container
- * A fixed position at the bottom of the viewport for easy access.
- */
 .buttons {
+    /* A more robust and flexible button container at the bottom */
     position: fixed;
-    bottom: 80px; /* Space for the footer links below */
+    bottom: 80px; /* Leaves space for the footer below it */
     left: 0;
     right: 0;
     display: flex;
@@ -84,49 +62,45 @@ h1 {
     z-index: 100;
 }
 
-/*
- * Buttons
- * A vibrant blue with a smooth hover effect.
- */
 button {
-    padding: 12px 24px;
-    margin: 0 15px;
+    padding: 12px 28px; /* More padding for a bigger tap target */
+    margin: 0 15px; /* More space between buttons */
     font-size: 1.1em;
     cursor: pointer;
     border: none;
-    border-radius: 25px; /* Pill-shaped buttons */
+    border-radius: 50px; /* Truly pill-shaped buttons for a modern look */
     color: #fff;
     background-color: #4a90e2;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.2); /* A subtle shadow for depth */
 }
 
 button:hover {
     background-color: #357bd8;
-    transform: translateY(-2px); /* Subtle lift on hover */
+    transform: translateY(-2px); /* A subtle lift on hover */
 }
 
-/*
- * Footer Links
- * A clean, unobtrusive footer.
- */
+.hidden {
+    display: none;
+}
+
 .footer-links {
     position: fixed;
-    bottom: 15px; /* Positioned at the very bottom */
+    bottom: 20px;
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 10px; /* Space between the links */
     z-index: 100;
 }
 
 .footer-links a {
     display: block;
     text-decoration: none;
-    color: #8da4c8; /* Lighter blue for subtle links */
+    color: #8da4c8; /* Lighter blue for a subtle link color */
     transition: color 0.3s ease;
 }
 
@@ -134,6 +108,6 @@ button:hover {
     color: #4a90e2; /* Highlight on hover */
 }
 
-.hidden {
-    display: none;
+.email-link {
+    white-space: nowrap;
 }
