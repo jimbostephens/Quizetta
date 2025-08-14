@@ -2,7 +2,7 @@
 // It fetches data, handles question rotation, and controls the buttons.
 
 // Replace this with your Google Sheet's public CSV URL
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTzBEVylxJgSMmJnClnCxupXuaV_v9ybkYgPlWxiDpmqBuy4JIi3pZByHKNyY-5KQDCTUadWsRyzaZr/pub?gid=0&single=true&output=csv'; 
+const SHEET_URL = 'q.csv'; 
 
 // Arrays to manage question state
 let allQuestions = [];
