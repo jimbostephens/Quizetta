@@ -12,25 +12,6 @@ const revealBtn = document.getElementById('reveal-btn');
 const nextBtn = document.getElementById('next-btn');
 const loadingMessageEl = document.getElementById('loading-message');
 
-// Fetch and parse data using PapaParse
-function fetchQuestions() {
-    console.log("Attempting to fetch data...");
-    Papa.parse(SHEET_URL, {
-        download: true,
-        header: false,
-        complete: function(results) {
-            console.log("Data fetch complete.");
-            const data = results.data;
-
-            allQuestions = data.slice(1).map(row => {
-                if (row.length < 2 || !row[0] || !row[1]) return null;
-
-                return {
-                    question: row[0].trim(),
-                    answer: row[1].trim()
-                };
-            }).filter(item => item !== null);
-
             // Initialize the quiz by populating the available questions
             availableQuestions = [...allQuestions];
 
