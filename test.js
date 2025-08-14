@@ -1,4 +1,4 @@
-const SHEET_URL = 'q.csv'; 
+const SHEET_URL = 'q.json'; 
 
 // Arrays to manage question state
 let allQuestions = [];
