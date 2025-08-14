@@ -1,14 +1,278 @@
 [
   {
-    "question": "What is the capital of France?",
-    "answer": "Paris"
+    "Questions": "What 1923 comedy features the classic shot of Harold Lloyd dangling from a clock face?",
+    "Answers": "Safety Last!"
   },
   {
-    "question": "Who painted the Mona Lisa?",
-    "answer": "Leonardo da Vinci"
+    "Questions": "What is the capital of Australia?",
+    "Answers": "Canberra"
   },
   {
-    "question": "What is the largest planet in our solar system?",
-    "answer": "Jupiter"
+    "Questions": "What boxing movie won the 1976 Best Picture Oscar?",
+    "Answers": "Rocky"
+  },
+  {
+    "Questions": "Who holds the record for most Best Actor Oscar wins for his performances in My Left Foot, There Will Be Blood, and Lincoln?",
+    "Answers": "Daniel Day-Lewis"
+  },
+  {
+    "Questions": "What filmmaker holds the record for most nominations for the Academy Award for Best Original Screenplay?",
+    "Answers": "Woody Allen"
+  },
+  {
+    "Questions": "Who won the Academy Award for Best Original Score for his work on 2015’s The Hateful Eight?",
+    "Answers": "Ennio Morricone"
+  },
+  {
+    "Questions": "What is the capital of Nigeria?",
+    "Answers": "Abuja"
+  },
+  {
+    "Questions": "The Black Maria film studio, where early shorts such as Fred Ott’s Sneeze and Prof Welton’s Boxing Cats were filmed, was the creation of what American inventor?",
+    "Answers": "Thomas Edison"
+  },
+  {
+    "Questions": "What 1922 film about an Inuit family is one of the earliest feature length documentaries?",
+    "Answers": "Nanook of the North"
+  },
+  {
+    "Questions": "Who directed 1998’s The Thin Blue Line, a documentary which helped to overturn a wrongful murder conviction?",
+    "Answers": "Errol Morris"
+  },
+  {
+    "Questions": "What musician was the subject of DA Pennebaker’s 1967 documentary Don’t Look Back?",
+    "Answers": "Bob Dylan"
+  },
+  {
+    "Questions": "From what Italian movie did the word ‘paparazzi’ originate?",
+    "Answers": "La Dolce Vita"
+  },
+  {
+    "Questions": "What 1972 gangster film was based on a novel by Mario Puzo?",
+    "Answers": "The Godfather"
+  },
+  {
+    "Questions": "Who directed Anthony Hopkins and Jodie Foster in The Silence of the Lambs?",
+    "Answers": "Jonathan Demme"
+  },
+  {
+    "Questions": "What Raymond Chandler character did Humphrey Bogart play the 1946 film The Big Sleep?",
+    "Answers": "Philip Marlowe"
+  },
+  {
+    "Questions": "What 1996 Danny Boyle film was based on a novel by Irvine Welsh?",
+    "Answers": "Trainspotting"
+  },
+  {
+    "Questions": "What Ken Kesey novel, and Milos Forman film, features the characters Randle McMurphy, Nurse Ratched, and “Chief” Bromden?",
+    "Answers": "One Flew Over the Cuckoo's Nest"
+  },
+  {
+    "Questions": "What 12 minute western of 1903 is considered the first film to use cross-cutting (using editing to show simultaneous action in different locations), and ends with a famous shot of a cowboy shooting at the camera?",
+    "Answers": "The Great Train Robbery"
+  },
+  {
+    "Questions": "What 1925 Soviet film by Eisenstein features the famous Odessa Steps sequence?",
+    "Answers": "Battleship Potemkin"
+  },
+  {
+    "Questions": "Clint Eastwood (as Dirty Harry) said his famous line ‘Go ahead, make my day’ in which Dirty Harry movie?",
+    "Answers": "Sudden Impact"
+  },
+  {
+    "Questions": "In what film does Lauren Bacall deliver the line, ‘You know how to whistle don’t you, Steve? You just put your lips together and blow.’?",
+    "Answers": "To Have and Have Not"
+  },
+  {
+    "Questions": "In what 1932 film is the line ‘We accept her, one of us, gooble gobble’ chanted?",
+    "Answers": "Freaks"
+  },
+  {
+    "Questions": "Name the 2016 documentary about the US prison system, directed by Ava DuVernay, which gets its title from the amendment to the US constitution that abolished slavery.",
+    "Answers": "13th"
+  },
+  {
+    "Questions": "Of what 1997 superhero franchise movie did Roger Ebert write that Uma Thurman ‘suggests plants *can* have multiple orgasms’?",
+    "Answers": "Batman & Robin"
+  },
+  {
+    "Questions": "According to Peter Bradshaw, ‘Travolta not only incinerates what is left of his own reputation, but takes someone else down with him: Forest Whitaker’ in what L Ron Hubbard-inspired sci-fi of 2000?",
+    "Answers": "Battlefield Earth"
+  },
+  {
+    "Questions": "Which three films were winners of the'big five' Oscars (best picture, best director, best actor, best actress, best screenplay)?",
+    "Answers": "It Happened One Night (1934), One Flew Over the Cuckoo's Nest (1975), The Silence of the Lambs (1991)"
+  },
+  {
+    "Questions": "What is the capital of the United Arab Emirates?",
+    "Answers": "Abu Dhabi"
+  },
+  {
+    "Questions": "What is the chemical symbol for tungsten?",
+    "Answers": "W"
+  },
+  {
+    "Questions": "What is the chemical symbol for silver?",
+    "Answers": "Ag"
+  },
+  {
+    "Questions": "What is the chemical symbol for gold?",
+    "Answers": "Au"
+  },
+  {
+    "Questions": "What Ancient Greek comic playwright wrote The Wasps, The Birds, and The Frogs?",
+    "Answers": "Aristophanes"
+  },
+  {
+    "Questions": "What Ancient Greek tragedian is famous for writing Oedipus Rex?",
+    "Answers": "Sophocles"
+  },
+  {
+    "Questions": "What Ancient Greek tragedian is famous for writing Medea?",
+    "Answers": "Euripedes"
+  },
+  {
+    "Questions": "What Roman poet is famous for writing Metamorpheses?",
+    "Answers": "Ovid"
+  },
+  {
+    "Questions": "The Roman poet Ovid is famous for writing what collection of stories of transformations?",
+    "Answers": "Metamorpheses"
+  },
+  {
+    "Questions": "The Fighting Temeraire is an 1839 painting by what artist?",
+    "Answers": "JMW Turner"
+  },
+  {
+    "Questions": "The Toilet of Venus, also known as The Rokeby Venus, is a 17th century painting by what artist?",
+    "Answers": "Diego Velázquez"
+  },
+  {
+    "Questions": "Bacchus and Ariadne is a painting by which Italian Renaissance painter, whose name has become associated with red hair?",
+    "Answers": "Titian"
+  },
+  {
+    "Questions": "Starry Night is an 1889 painting by what artist?",
+    "Answers": "Vincent van Gogh"
+  },
+  {
+    "Questions": "The Kiss is an early 20th century painting by what Austrian symbolist artist?",
+    "Answers": "Gustav Klimt"
+  },
+  {
+    "Questions": "Water Lily Pond is an 1899 painting by what artist?",
+    "Answers": "Claude Monet"
+  },
+  {
+    "Questions": "The Garden of Earthly Delights is a tryptich painting by what master of the Early Netherlandish school?",
+    "Answers": "Heironymous Bosch"
+  },
+  {
+    "Questions": "Girl with a Pearl Earring is a 17th century painting by what Dutch artist?",
+    "Answers": "Johannes Vermeer"
+  },
+  {
+    "Questions": "The Scream is an 1893 painting by what Norwegian artist?",
+    "Answers": "Edvard Munch"
+  },
+  {
+    "Questions": "The Wanderer Above a Sea of Mist is an 1818 painting by what German Romantic painter?",
+    "Answers": "Caspar David Friedrich"
+  },
+  {
+    "Questions": "Syn-propanethial S-oxide is an irritant released during what activity?",
+    "Answers": "Cutting onions"
+  },
+  {
+    "Questions": "The Luncheon on the Grass, depicting a female nude with two fully dressed men, is an 1863 painting by what French Modernist artist?",
+    "Answers": "Édouard Manet"
+  },
+  {
+    "Questions": "American Gothic is a 1930 painting by what American artist?",
+    "Answers": "Grant Wood"
+  },
+  {
+    "Questions": "Saturn Devouring His Son is one of the 'Black Paintings' by what Spanish Romantic painter?",
+    "Answers": "Francisco Goya"
+  },
+  {
+    "Questions": "Sefl-Portrait with Bandaged Ear is an 1889 painting by what Dutch Post-Impressionist?",
+    "Answers": "Vincent van Gogh"
+  },
+  {
+    "Questions": "What does USB stand for?",
+    "Answers": "Universal serial bus"
+  },
+  {
+    "Questions": "The name of what branch of mathematics derives from 'al-jabr', originally an Arabic term for bonesetting?",
+    "Answers": "Algebra"
+  },
+  {
+    "Questions": "What is the word radar short for?",
+    "Answers": "Radio detection and ranging"
+  },
+  {
+    "Questions": "What is the word laser short for?",
+    "Answers": "Light amplification by stimulated emission of radiation"
+  },
+  {
+    "Questions": "What is the word sonar short for?",
+    "Answers": "Sound (or sonic) navigation and ranging"
+  },
+  {
+    "Questions": "What is the word scuba short for?",
+    "Answers": "Self-contained underwater breathing apparatus"
+  },
+  {
+    "Questions": "What is the chemical symbol for mercury?",
+    "Answers": "Hg"
+  },
+  {
+    "Questions": "The Hunters in the Snow (Winter) is a 1565 painting by what artist?",
+    "Answers": "Pieter Bruegel the Elder"
+  },
+  {
+    "Questions": "The Death of Marat is a 1793 painting by what French artist?",
+    "Answers": "Jacques-Louis David"
+  },
+  {
+    "Questions": "The School of Athens is an early 16th century fresco by what Italian renaissance artist?",
+    "Answers": "Raphael"
+  },
+  {
+    "Questions": "Two Tahitian Women is an 1899 painting by what French artist?",
+    "Answers": "Paul Gauguin"
+  },
+  {
+    "Questions": "What Ancient Greek philosopher wrote The Republic around 380 BCE?",
+    "Answers": "Plato"
+  },
+  {
+    "Questions": "What two German philosophers wrote the 1848 pamphlet The Communist Manifesto?",
+    "Answers": "Karl Marx and Friedrich Engels"
+  },
+  {
+    "Questions": "What Russian chemist is credited with publishing the first modern periodic table of elements in 1869?",
+    "Answers": "Dmitri Mendeleev"
+  },
+  {
+    "Questions": "Who invented vulcanised rubber in 1839?",
+    "Answers": "Charles Goodyear"
+  },
+  {
+    "Questions": "What did Charles Goodyear invent in 1839?",
+    "Answers": "Vulcanised rubber"
+  },
+  {
+    "Questions": "What Scottish-born inventor was granted a patent for the telephone in 1876?",
+    "Answers": "Alexander Graham Bell"
+  },
+  {
+    "Questions": "Who invented the phonograph in 1877?",
+    "Answers": "Thomas Edison"
+  },
+  {
+    "Questions": "What German astronomer's three laws of planetary motion describe the orbits of planets?",
+    "Answers": "Johannes Kepler"
   }
 ]
