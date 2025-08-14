@@ -1,7 +1,3 @@
-// This script contains all the logic for your Quizetta app.
-// It fetches data, handles question rotation, and controls the buttons.
-
-// Replace this with your Google Sheet's public CSV URL
 const SHEET_URL = 'q.csv'; 
 
 // Arrays to manage question state
@@ -16,7 +12,7 @@ const revealBtn = document.getElementById('reveal-btn');
 const nextBtn = document.getElementById('next-btn');
 const loadingMessageEl = document.getElementById('loading-message');
 
-// Fetch and parse data from the Google Sheet using PapaParse
+// Fetch and parse data using PapaParse
 function fetchQuestions() {
     console.log("Attempting to fetch data...");
     Papa.parse(SHEET_URL, {
