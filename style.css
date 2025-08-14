@@ -66,12 +66,12 @@ button {
     border: none;
     border-radius: 25px;
     color: #fff;
-    background-color: #c7c7c7;
+    background-color: #666666;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #c7c7c7;
+    background-color: #666666;
 }
 
 .hidden {
@@ -92,7 +92,7 @@ button:hover {
     display: block;
     margin-bottom: 15px;
     text-decoration: underline;
-    color: #c7c7c7;
+    color: #666666;
 }
 
 .footer-links a:last-child {
