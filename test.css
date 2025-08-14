@@ -9,13 +9,13 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A slightly softer font */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Applied to the whole body */
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    background-color: var(--soft-blue); /* Using the soft blue variable */
-    color: var(--light-blue-text); /* Softened text color */
+    background-color: var(--soft-blue);
+    color: var(--light-blue-text);
     margin: 0;
     padding-bottom: 70px;
     box-sizing: border-box;
@@ -24,24 +24,28 @@ body {
 
 .container {
     text-align: center;
-    padding: 25px; /* Slightly increased padding */
-    border-radius: 12px; /* Softer, more rounded corners */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly softer shadow */
-    max-width: 650px; /* Slightly wider container */
+    background-color: var(--calm-blue);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    max-width: 650px;
     width: 90%;
-    margin: 30px 0; /* Increased margin */
-    border: 1px solid rgba(0, 0, 0, 0.05); /* Very subtle border for depth */
+    margin: 30px 0;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 h1 {
-    color: var(--dark-blue-text); /* Using the dark blue variable for headlines */
-    font-weight: 600; /* Bolder for better contrast */
+    /* Explicitly setting the font properties for h1 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-blue-text);
+    font-weight: 500; /* Softer font weight */
+    font-size: 2.5em; /* Slightly adjusted size */
     margin-bottom: 20px;
 }
 
 #loading-message {
     font-size: 1.6em;
-    color: var(--deep-sky-blue); /* A gentle accent color */
+    color: var(--deep-sky-blue);
     margin: 25px 0;
     font-weight: 500;
 }
@@ -61,23 +65,25 @@ h1 {
 }
 
 .buttons {
-    position: fixed;
-    bottom: 120px; /* Adjusted position to be a bit higher and more modern */
+    position: absolute;
+    bottom: 120px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
     z-index: 10;
     width: 100%;
+    padding: 10px 0;
+    background-color: var(--soft-blue);
 }
 
 button {
-    padding: 12px 24px; /* Increased padding for a more touch-friendly feel */
+    padding: 12px 24px;
     margin: 0 12px;
     font-size: 1.1em;
     cursor: pointer;
     border: none;
-    border-radius: 25px; /* Pill-shaped buttons for a softer look */
+    border-radius: 25px;
     color: #fff;
     background-color: var(--deep-sky-blue);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -86,7 +92,7 @@ button {
 
 button:hover {
     background-color: var(--hover-blue);
-    transform: translateY(-2px); /* Slight lift on hover */
+    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -95,21 +101,21 @@ button:hover {
 }
 
 .footer-links {
-    position: fixed;
+    position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: transparent;
     padding: 10px;
+    background-color: var(--soft-blue);
 }
 
 .footer-links a {
     display: block;
     margin-bottom: 10px;
-    text-decoration: none; /* Removed underline for a cleaner look */
+    text-decoration: none;
     color: var(--dark-blue-text);
     font-weight: 500;
     transition: color 0.2s ease;
@@ -117,7 +123,7 @@ button:hover {
 
 .footer-links a:hover {
     color: var(--deep-sky-blue);
-    text-decoration: underline; /* Added underline on hover for clarity */
+    text-decoration: underline;
 }
 
 .email-link {
