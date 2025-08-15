@@ -51,16 +51,16 @@ h1 {
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the single button */
+    align-items: center;
     z-index: 10;
     width: 100%;
 }
 
 .navigation-buttons {
     display: flex;
-    justify-content: center; /* Centers the previous and next buttons */
+    justify-content: center;
     margin-top: 10px;
-    gap: 10px; /* Adds space between buttons */
+    gap: 10px;
 }
 
 button {
@@ -72,7 +72,7 @@ button {
     color: #fff;
     background-color: #666666;
     transition: background-color 0.3s ease;
-    width: 175px; /* The new fixed pixel width */
+    width: 150px;
 }
 
 button:hover {
@@ -81,6 +81,17 @@ button:hover {
 
 .hidden {
     display: none;
+}
+
+/* New style for disabled buttons */
+.disabled-btn {
+    background-color: #a0a0a0;
+    color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+.disabled-btn:hover {
+    background-color: #a0a0a0;
 }
 
 .footer-links {
