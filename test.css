@@ -54,7 +54,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     z-index: 10; /* Ensures buttons are on top of other content */
-    width: 100%;
+    width:75%;
 }
 
 .navigation-buttons {
@@ -73,6 +73,7 @@ button {
     color: #fff;
     background-color: #666666;
     transition: background-color 0.3s ease;
+    width: 33.3%;
 }
 
 button:hover {
