@@ -45,27 +45,27 @@ h1 {
 }
 
 .buttons {
-    /* These are the key changes to fix the button position */
     position: fixed;
-    top: 66.6%; /* Positions the buttons two-thirds of the way down the page */
+    top: 66.6%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    z-index: 10; /* Ensures buttons are on top of other content */
-    width:75%;
+    z-index: 10;
+    width: 100%;
+    padding: 0 20px; /* Add some padding to prevent buttons from touching the screen edges */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
 }
 
 .navigation-buttons {
     display: flex;
-    justify-content: center;
-    margin-top: 10px; /* Adds space between the reveal button and the navigation buttons */
+    justify-content: space-between;
+    margin-top: 10px;
 }
 
 button {
     padding: 10px 20px;
-    margin: 0 10px;
+    margin: 0 5px; /* Adjust margin to create space between buttons */
     font-size: 1em;
     cursor: pointer;
     border: none;
@@ -73,7 +73,7 @@ button {
     color: #fff;
     background-color: #666666;
     transition: background-color 0.3s ease;
-    width: 33.3%;
+    flex-grow: 1; /* This is the key change to make the buttons the same width */
 }
 
 button:hover {
