@@ -51,21 +51,20 @@ h1 {
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center the single button */
     z-index: 10;
     width: 100%;
-    padding: 0 20px; /* Add some padding to prevent buttons from touching the screen edges */
-    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
 }
 
 .navigation-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centers the previous and next buttons */
     margin-top: 10px;
+    gap: 10px; /* Adds space between buttons */
 }
 
 button {
     padding: 10px 20px;
-    margin: 0 5px; /* Adjust margin to create space between buttons */
     font-size: 1em;
     cursor: pointer;
     border: none;
@@ -73,7 +72,7 @@ button {
     color: #fff;
     background-color: #666666;
     transition: background-color 0.3s ease;
-    flex-grow: 1; /* This is the key change to make the buttons the same width */
+    width: 150px; /* The new fixed pixel width */
 }
 
 button:hover {
