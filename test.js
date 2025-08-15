@@ -53,12 +53,14 @@ function getNextQuestion(isFromHistory = false) {
         currentQuestionIndex++;
         displayQuestion(questionHistory[currentQuestionIndex]);
     } else {
+        // Check if all questions have been used
         if (availableQuestions.length === 0) {
-            questionEl.textContent = 'You have completed all the questions!';
-            answerEl.textContent = '';
-            revealBtn.classList.add('hidden');
-            nextBtn.classList.add('hidden');
-            return;
+            // Reset the available questions from the main list
+            availableQuestions = [...allQuestions];
+            
+            // Clear history and reset index to avoid repetition immediately
+            questionHistory = [];
+            currentQuestionIndex = -1;
         }
 
         const randomIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -85,8 +87,9 @@ function displayQuestion(question) {
 
 function updateButtonVisibility() {
     prevBtn.classList.toggle('disabled-btn', currentQuestionIndex <= 0);
-    nextBtn.classList.toggle('hidden', currentQuestionIndex >= questionHistory.length - 1 && availableQuestions.length === 0);
-    revealBtn.classList.toggle('hidden', availableQuestions.length === 0 && currentQuestionIndex >= questionHistory.length - 1);
+    // The next button is always enabled unless the quiz is being reset
+    nextBtn.classList.remove('hidden');
+    revealBtn.classList.remove('hidden');
 }
 
 // Event listeners for the buttons
@@ -94,7 +97,7 @@ revealBtn.addEventListener('click', () => {
     answerEl.classList.remove('hidden');
 });
 
-nextBtn.addEventListener('click', () => getNextQuestion(true));
+nextBtn.addEventListener('click', () => getNextQuestion(false));
 
 prevBtn.addEventListener('click', getPreviousQuestion);
 
