@@ -30,13 +30,11 @@ function fetchQuestions() {
             loadingMessageEl.classList.add('hidden');
             questionEl.classList.remove('hidden');
             revealBtn.classList.remove('hidden');
-            prevBtn.classList.remove('hidden');
             nextBtn.classList.remove('hidden');
 
             if (availableQuestions.length === 0) {
                 questionEl.textContent = 'No questions available. Please check your JSON data.';
                 revealBtn.classList.add('hidden');
-                prevBtn.classList.add('hidden');
                 nextBtn.classList.add('hidden');
             } else {
                 getNextQuestion(false);
@@ -59,7 +57,6 @@ function getNextQuestion(isFromHistory = false) {
             questionEl.textContent = 'You have completed all the questions!';
             answerEl.textContent = '';
             revealBtn.classList.add('hidden');
-            prevBtn.classList.remove('hidden');
             nextBtn.classList.add('hidden');
             return;
         }
@@ -87,7 +84,7 @@ function displayQuestion(question) {
 }
 
 function updateButtonVisibility() {
-    prevBtn.classList.toggle('hidden', currentQuestionIndex <= 0);
+    prevBtn.classList.toggle('disabled-btn', currentQuestionIndex <= 0);
     nextBtn.classList.toggle('hidden', currentQuestionIndex >= questionHistory.length - 1 && availableQuestions.length === 0);
     revealBtn.classList.toggle('hidden', availableQuestions.length === 0 && currentQuestionIndex >= questionHistory.length - 1);
 }
