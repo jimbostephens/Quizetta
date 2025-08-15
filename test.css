@@ -72,7 +72,7 @@ button {
     color: #fff;
     background-color: #666666;
     transition: background-color 0.3s ease;
-    width: 150px; /* The new fixed pixel width */
+    width: 175px; /* The new fixed pixel width */
 }
 
 button:hover {
