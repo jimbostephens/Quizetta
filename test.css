@@ -1,83 +1,82 @@
 body {
-    /* A more deliberate color scheme and typography. */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     min-height: 100vh;
-    background-color: #f4f7f9; /* A soft, off-white background */
-    color: #333;
+    background-color: #ececec;
     margin: 0;
+    padding-bottom: 70px;
     box-sizing: border-box;
+    position: relative;
 }
 
 .container {
     text-align: center;
-    background-color: #fff; /* Pure white for a clean look */
-    padding: 30px; /* More padding for more breathing room */
-    border-radius: 16px; /* Softer, more modern rounded corners */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* A more subtle and diffuse shadow */
+    background-color: #dedede;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     width: 90%;
     margin: 20px 0;
-    flex-grow: 1; /* Allows the content to fill available space */
 }
 
 h1 {
-    color: #4a90e2; /* A calming, vibrant blue */
-    font-size: 2.5em; /* Slightly larger heading */
-    margin-bottom: 20px;
+    color: #c7c7c7;
+    font-size: 2.5em;
+    margin-bottom: 10px;
 }
 
 #loading-message {
-    font-size: 1.6em; /* Slightly larger for better readability */
-    color: #777; /* Softer gray */
+    font-size: 1.5em;
     margin: 20px 0;
 }
 
 #question {
-    font-size: 1.6em; /* Consistent with loading message */
+    font-size: 1.5em;
     margin: 20px 0;
-    min-height: 50px;
-    line-height: 1.4; /* Improved line spacing for readability */
 }
 
 #answer {
-    font-size: 1.6em;
-    color: #3cb371; /* A gentle green for the answer, creates a positive contrast */
-    font-weight: 600; /* Bolder for emphasis */
-    min-height: 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-top: 10px;
 }
 
 .buttons {
-    /* A more robust and flexible button container at the bottom */
+    /* These are the key changes to fix the button position */
     position: fixed;
-    bottom: 80px; /* Leaves space for the footer below it */
-    left: 0;
-    right: 0;
+    top: 66.6%; /* Positions the buttons two-thirds of the way down the page */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10; /* Ensures buttons are on top of other content */
+    width: 100%;
+}
+
+.navigation-buttons {
     display: flex;
     justify-content: center;
-    padding: 15px;
-    z-index: 100;
+    margin-top: 10px; /* Adds space between the reveal button and the navigation buttons */
 }
 
 button {
-    padding: 12px 28px; /* More padding for a bigger tap target */
-    margin: 0 15px; /* More space between buttons */
-    font-size: 1.1em;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1em;
     cursor: pointer;
     border: none;
-    border-radius: 50px; /* Truly pill-shaped buttons for a modern look */
+    border-radius: 25px;
     color: #fff;
-    background-color: #4a90e2;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.2); /* A subtle shadow for depth */
+    background-color: #666666;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #357bd8;
-    transform: translateY(-2px); /* A subtle lift on hover */
+    background-color: #666666;
 }
 
 .hidden {
@@ -87,25 +86,22 @@ button:hover {
 .footer-links {
     position: fixed;
     bottom: 20px;
-    left: 0;
-    right: 0;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    gap: 10px; /* Space between the links */
-    z-index: 100;
+    align-items: center;
 }
 
 .footer-links a {
     display: block;
-    text-decoration: none;
-    color: #8da4c8; /* Lighter blue for a subtle link color */
-    transition: color 0.3s ease;
+    margin-bottom: 15px;
+    text-decoration: underline;
+    color: #666666;
 }
 
-.footer-links a:hover {
-    color: #4a90e2; /* Highlight on hover */
+.footer-links a:last-child {
+    margin-bottom: 0;
 }
 
 .email-link {
