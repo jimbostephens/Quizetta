@@ -27,6 +27,7 @@ h1 {
     font-size: 3em;
     margin: 0;
     font-weight: bold;
+    padding: 20px;
 }
 
 #loading-message {
