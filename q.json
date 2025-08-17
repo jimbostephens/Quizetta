@@ -20,8 +20,7 @@
    "answer": "Jean-Paul Sartre"
  },
  {
-   "question": "What Russian playwright's last play was The Cherry Orchard?",
-   "answer": ""
+   "question": "What Russian playwright's last play was The Cherry Orchard?"
  },
  {
    "question": "Who wrote the 1913 play Pygmalion?",
@@ -168,8 +167,12 @@
    "answer": "Battlefield Earth "
  },
  {
-   "question": "What three films were winners of the 'big five' Oscars (best picture, best director, best actor, best actress, best screenplay)?",
-   "answer": "It Happened One Night (1934), One Flew Over the Cuckoo's Nest (1975), The Silence of the Lambs (1991)"
+   "question": "What three films were winners of the ",
+   "answer": " best director",
+   "FIELD3": " best actor",
+   "FIELD4": " best actress",
+   "FIELD5": " best screenplay)?\"",
+   "FIELD6": "It Happened One Night (1934), One Flew Over the Cuckoo's Nest (1975), The Silence of the Lambs (1991)"
  },
  {
    "question": "What is the capital of the United Arab Emirates?",
@@ -188,15 +191,15 @@
    "answer": "Au "
  },
  {
-   "question": "What Ancient Greek comic playwright wrote The Wasps, The Birds, and The Frogs?",
+   "question": "What ancient Greek comic playwright wrote The Wasps, The Birds, and The Frogs?",
    "answer": "Aristophanes "
  },
  {
-   "question": "What Ancient Greek tragedian is famous for writing Oedipus Rex?",
+   "question": "What ancient Greek tragedian wrote Antigone, Oedipus Rex, and Electra?",
    "answer": "Sophocles "
  },
  {
-   "question": "What Ancient Greek tragedian best known for writing Medea?",
+   "question": "What ancient Greek tragedian best known for writing Medea?",
    "answer": "Euripedes "
  },
  {
