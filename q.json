@@ -1,5 +1,73 @@
 [
  {
+   "question": "Who wrote the 1983 play, and 1992 film, Glengarry Glen Ross?",
+   "answer": "David Mamet"
+ },
+ {
+   "question": "What playwright wrote the 1957 \"comedy of menace\" The Birthday Party?",
+   "answer": "Harold Pinter"
+ },
+ {
+   "question": "Who wrote the English drawing room play An Inspector Calls?",
+   "answer": "JB Priestley"
+ },
+ {
+   "question": "Who wrote the play Blithe Spirit, first performed in 1941?",
+   "answer": "Noël Coward"
+ },
+ {
+   "question": "Who wrote the 1944 existentialist play No Exit?",
+   "answer": "Jean-Paul Sartre"
+ },
+ {
+   "question": "What Russian playwright's last play was The Cherry Orchard?",
+   "answer": ""
+ },
+ {
+   "question": "Who wrote the 1913 play Pygmalion?",
+   "answer": "George Bernard Shaw"
+ },
+ {
+   "question": "Who wrote the 1947 okay A Streetcar Named Desire?",
+   "answer": "Tennessee Williams"
+ },
+ {
+   "question": "Who wrote the 1979 play A Doll's House?",
+   "answer": "Henrik Ibsen"
+ },
+ {
+   "question": "Who wrote the 1949 play Death of a Salesman?",
+   "answer": "Arthur Miller"
+ },
+ {
+   "question": "Who wrote Waiting for Godot?",
+   "answer": "Samuel Beckett"
+ },
+ {
+   "question": "Who wrote the 1895 play The Important of Being Earnest?",
+   "answer": "Oscar Wilde"
+ },
+ {
+   "question": "Who described his experiences on mescaline in 1954's The Doors of Perception?",
+   "answer": "Aldous Huxley"
+ },
+ {
+   "question": "What 17th century Anglo-Irish chemist lends his name to a scientific law that describes the relationship between the pressure and volume of a confined gas?",
+   "answer": "Robert Boyle"
+ },
+ {
+   "question": "What is the Scoville scale a measure of?",
+   "answer": "Spiciness"
+ },
+ {
+   "question": "What is the Beaufort scale a measure of?",
+   "answer": "Wind strength"
+ },
+ {
+   "question": "What is the Richter scale a measure of?",
+   "answer": "The strength of earthquakes "
+ },
+ {
    "question": "What 1923 comedy features the classic shot of Harold Lloyd dangling from a clock face?",
    "answer": "Safety Last! "
  },
@@ -128,7 +196,7 @@
    "answer": "Sophocles "
  },
  {
-   "question": "What Ancient Greek tragedian is famous for writing Medea?",
+   "question": "What Ancient Greek tragedian best known for writing Medea?",
    "answer": "Euripedes "
  },
  {
