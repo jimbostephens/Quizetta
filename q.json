@@ -1,4 +1,84 @@
 [
+  {
+   "question": "Of what country is Tbilisi the capital?",
+   "answer": "Georgia"
+ },
+  {
+   "question": "Of what country is Helsinki the capital?",
+   "answer": "Finland"
+ },
+  {
+   "question": "Of what territory is Stanley the capital?",
+   "answer": "Falkland Islands"
+ },
+  {
+   "question": "Of what country is Addis Ababa the capital?",
+   "answer": "Ethiopia"
+ },
+  {
+   "question": "Of what country is Copenhagen the capital?",
+   "answer": "Denmark"
+ },
+  {
+   "question": "Of what country is Kinshasa the capital?",
+   "answer": "Democratic Republic of the Congo"
+ },
+  {
+   "question": "Of what country is Prague the capital?",
+   "answer": "Czech Republic"
+ },
+  {
+   "question": "Of what country is Zagreb the capital?",
+   "answer": "Croatia"
+ },
+  {
+   "question": "Of what country is Zagreb the capital?",
+   "answer": "Croatia"
+ },
+  {
+   "question": "Of what country is San José the capital?",
+   "answer": "Costa Rica"
+ },
+  {
+   "question": "Of what country is Bogotá the capital?",
+   "answer": "Colombia"
+ },
+  {
+   "question": "Of what country is Santiago the capital?",
+   "answer": "Chile"
+ },
+  {
+   "question": "Of what country is Phnom Penh the capital?",
+   "answer": "Cambodia"
+ },
+  {
+   "question": "Of what country is Sofia the capital?",
+   "answer": "Bulgaria"
+ },
+  {
+   "question": "Of what country is Sarajevo the capital?",
+   "answer": "Bosnia and Herzogovina"
+ },
+  {
+   "question": "Of what country is Minsk the capital?",
+   "answer": "Belarus"
+ },
+  {
+   "question": "Of what country is Buenos Aires the capital?",
+   "answer": "Argentina"
+ },
+  {
+   "question": "Of what country is Canberra the capital?",
+   "answer": "Australia"
+ },
+  {
+   "question": "Of what country is Vienna the capital?",
+   "answer": "Austria"
+ },
+ {
+   "question": "Of what country is Kabul the capital?",
+   "answer": "Afghanistan"
+ },
  {
    "question": "What is the capital of Croatia?",
    "answer": "Zagreb"
@@ -48,7 +128,7 @@
    "answer": "Stockholm"
  },
  {
-   "question": "What is the Falkland Islands?",
+   "question": "What is the capital of the Falkland Islands?",
    "answer": "Stanley"
  },
  {
@@ -728,31 +808,4 @@
    "answer": "Frank Herbert"
  },
  {
-   "question": "Who wrote the 1939 novel The Grapes of Wrath?",
-   "answer": "John Steinbeck"
- },
- {
-   "question": "Who wrote the 1979 comic science fiction novel The Hitchhiker's Guide to the Universe?",
-   "answer": "Douglas Adams"
- },
- {
-   "question": "Who wrote the 1994 autobiography Long Walk to Freedom?",
-   "answer": "Nelson Mandela"
- },
- {
-   "question": "Who wrote the 1952 novella The Old Man and the Sea?",
-   "answer": "Ernest Hemingway"
- },
- {
-   "question": "What Polish-born physicist was awarded the Nobel Prize in Chemistry for the discovery of radium and polonium?",
-   "answer": "Marie Curie"
- },
- {
-   "question": "What politician won the Nobel Peace Prize in 1991, and defended the Burmese military against allegations of genocide at the Hague in 2019?",
-   "answer": "Aung San Suu Kyi"
- },
- {
-   "question": "Who won the Nobel Prize in Physics in 1945 for his discovery of the Exclusion Principle, which is named for him?",
-   "answer": "Wolfgang Pauli"
- }
-]
+   "question": "Who wrote the 19
