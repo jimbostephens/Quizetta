@@ -1,7 +1,83 @@
 [
+  {
+   "question": "Of what country is Tbilisi the capital?",
+   "answer": "Georgia"
+ },
+  {
+   "question": "Of what country is Helsinki the capital?",
+   "answer": "Finland"
+ },
+  {
+   "question": "Of what territory is Stanley the capital?",
+   "answer": "Falkland Islands"
+ },
+  {
+   "question": "Of what country is Addis Ababa the capital?",
+   "answer": "Ethiopia"
+ },
+  {
+   "question": "Of what country is Copenhagen the capital?",
+   "answer": "Denmark"
+ },
+  {
+   "question": "Of what country is Kinshasa the capital?",
+   "answer": "Democratic Republic of the Congo"
+ },
+  {
+   "question": "Of what country is Prague the capital?",
+   "answer": "Czech Republic"
+ },
+  {
+   "question": "Of what country is Zagreb the capital?",
+   "answer": "Croatia"
+ },
+  {
+   "question": "Of what country is Zagreb the capital?",
+   "answer": "Croatia"
+ },
+  {
+   "question": "Of what country is San José the capital?",
+   "answer": "Costa Rica"
+ },
+  {
+   "question": "Of what country is Bogotá the capital?",
+   "answer": "Colombia"
+ },
+  {
+   "question": "Of what country is Santiago the capital?",
+   "answer": "Chile"
+ },
+  {
+   "question": "Of what country is Phnom Penh the capital?",
+   "answer": "Cambodia"
+ },
+  {
+   "question": "Of what country is Sofia the capital?",
+   "answer": "Bulgaria"
+ },
+  {
+   "question": "Of what country is Sarajevo the capital?",
+   "answer": "Bosnia and Herzogovina"
+ },
+  {
+   "question": "Of what country is Minsk the capital?",
+   "answer": "Belarus"
+ },
+  {
+   "question": "Of what country is Buenos Aires the capital?",
+   "answer": "Argentina"
+ },
+  {
+   "question": "Of what country is Canberra the capital?",
+   "answer": "Australia"
+ },
+  {
+   "question": "Of what country is Vienna the capital?",
+   "answer": "Austria"
+ },
  {
-   "question": "?",
-   "answer": ""
+   "question": "Of what country is Kabul the capital?",
+   "answer": "Afghanistan"
  },
  {
    "question": "What is the capital of Croatia?",
@@ -52,7 +128,7 @@
    "answer": "Stockholm"
  },
  {
-   "question": "What is the Falkland Islands?",
+   "question": "What is the capital of the Falkland Islands?",
    "answer": "Stanley"
  },
  {
