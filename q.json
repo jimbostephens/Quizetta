@@ -1,5 +1,57 @@
 [
   {
+   "question": "Of what country is Ulaanbaatar the capital?",
+   "answer": "Mongolia"
+ },
+  {
+   "question": "Of what country is Vilnius the capital?",
+   "answer": "Lithuania"
+ },
+  {
+   "question": "Of what country is Tripoli the capital?",
+   "answer": "Libya"
+ },
+  {
+   "question": "Of what country is Beirut the capital?",
+   "answer": "Lebanon"
+ },
+  {
+   "question": "Of what country is Riga the capital?",
+   "answer": "Latvia"
+ },
+  {
+   "question": "Of what country is Nairobi the capital?",
+   "answer": "Kenya"
+ },
+  {
+   "question": "Of what territory is St Helier the capital?",
+   "answer": "Jersey"
+ },
+  {
+   "question": "Of what country is Kingston the capital?",
+   "answer": "Jamaica"
+ },
+  {
+   "question": "Of what country is Tehran the capital?",
+   "answer": "Iran"
+ },
+  {
+   "question": "Of what country is Reykjavik the capital?",
+   "answer": "Iceland"
+ },
+  {
+   "question": "Of what country is Budapest the capital?",
+   "answer": "Hungary"
+ },
+  {
+   "question": "Of what country is Port-au-Prince the capital?",
+   "answer": "Haiti"
+ },
+  {
+   "question": "Of what country is Accra the capital?",
+   "answer": "Ghana"
+ },
+  {
    "question": "Of what country is Tbilisi the capital?",
    "answer": "Georgia"
  },
