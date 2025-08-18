@@ -808,4 +808,31 @@
    "answer": "Frank Herbert"
  },
  {
-   "question": "Who wrote the 19
+   "question": "Who wrote the 1939 novel The Grapes of Wrath?",
+   "answer": "John Steinbeck"
+ },
+ {
+   "question": "Who wrote the 1979 comic science fiction novel The Hitchhiker's Guide to the Universe?",
+   "answer": "Douglas Adams"
+ },
+ {
+   "question": "Who wrote the 1994 autobiography Long Walk to Freedom?",
+   "answer": "Nelson Mandela"
+ },
+ {
+   "question": "Who wrote the 1952 novella The Old Man and the Sea?",
+   "answer": "Ernest Hemingway"
+ },
+ {
+   "question": "What Polish-born physicist was awarded the Nobel Prize in Chemistry for the discovery of radium and polonium?",
+   "answer": "Marie Curie"
+ },
+ {
+   "question": "What politician won the Nobel Peace Prize in 1991, and defended the Burmese military against allegations of genocide at the Hague in 2019?",
+   "answer": "Aung San Suu Kyi"
+ },
+ {
+   "question": "Who won the Nobel Prize in Physics in 1945 for his discovery of the Exclusion Principle, which is named for him?",
+   "answer": "Wolfgang Pauli"
+ }
+]
