@@ -1,5 +1,21 @@
 [
   {
+   "question": "Of what country is Abuja the capital?",
+   "answer": "Nigeria"
+ },
+  {
+   "question": "Of what country is Wellington the capital?",
+   "answer": "New Zealand"
+ },
+  {
+   "question": "Of what country is Khatmandu the capital?",
+   "answer": "Nepal"
+ },
+  {
+   "question": "Of what country is Rabat the capital?",
+   "answer": "Morocco"
+ },
+  {
    "question": "Of what country is Ulaanbaatar the capital?",
    "answer": "Mongolia"
  },
