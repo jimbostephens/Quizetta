@@ -1,5 +1,169 @@
 [
   {
+   "question": "What does the RMS in RMS Titanic stand for?",
+   "answer": "Royal Mail Ship"
+ },
+  {
+   "question": "What is the name of Sherlock Holmes's landlady?",
+   "answer": "Mrs Hudson"
+ },
+  {
+   "question": "What is Sherlock Holmes's fictional address?",
+   "answer": "221bB Baker Street"
+ },
+    {
+   "question": "What was the first synthetic plastic, patented in 1909?",
+   "answer": "Bakelite"
+ },
+  {
+   "question": "The contruction of what 51 mile waterway began in 1904?",
+   "answer": "The Panama Canal"
+ },
+  {
+   "question": "What prizes, widely considered the most prestigious in their respective fields, were first awarded in 1901?",
+   "answer": "The Nobel Prizes"
+ },
+  {
+   "question": "Who became US president following the assassination of William McKinley in 1901?",
+   "answer": "Theodore Roosevelt"
+ },
+  {
+   "question": "What monarch's reign of almost 64 years ended in 1901??",
+   "answer": "Queen Victoria"
+ },
+  {
+   "question": "Who created the characters Tarzan and John Carter?",
+   "answer": "Edgar Rice Burroughs"
+ },
+  {
+   "question": "Who wrote the 1953 novel Fahrenheit 451?",
+   "answer": "Ray Bradbury"
+ },
+  {
+   "question": "Who wrote the 1961 novel Catch-22?",
+   "answer": "Joseph Heller"
+ },
+  {
+   "question": "Who wrote the early 14th century Italian narrative poem The Divine Comedy?",
+   "answer": "Dante Alighieri"
+ },
+  {
+   "question": "What French author and philosopher's works include The Stranger, The Plague, and The Myth of Sisyphus?",
+   "answer": "Albert Camus"
+ },
+  {
+   "question": "Who wrote the 1967 Japaneses novel Norwegian Wood?",
+   "answer": "Haruki Murakami"
+ },
+  {
+   "question": "What are China’s two special administrative regions?",
+   "answer": "Hong Kong and Macau"
+ },
+  {
+   "question": "Of what country is Harare the capital?",
+   "answer": "Zimbabwe"
+ },
+  {
+   "question": "Of what country is Hanoi the capital?",
+   "answer": "Vietnam"
+ },
+  {
+   "question": "Of what country is Montevideo the capital?",
+   "answer": "Venezuela"
+ },
+  {
+   "question": "Of what country is Abu Dhabi the capital?",
+   "answer": "United Arab Emirates"
+ },
+  {
+   "question": "Of what country is Kyiv the capital?",
+   "answer": "Ukraine"
+ },
+  {
+   "question": "Of what country is Ankara the capital?",
+   "answer": "Turkey"
+ },
+  {
+   "question": "Of what country is Port of Spain the capital?",
+   "answer": "Trinidad and Tobago"
+ },
+  {
+   "question": "Of what country is Bangkok the capital?",
+   "answer": "Thailand"
+ },
+  {
+   "question": "Of what country is Damascus the capital?",
+   "answer": "Syria"
+ },
+  {
+   "question": "Of what country is Khartoum the capital?",
+   "answer": "Sudan"
+ },
+  {
+   "question": "Of what country is Seoul the capital?",
+   "answer": "South Korea"
+ },
+  {
+   "question": "Of what country is Mogadishu the capital?",
+   "answer": "Somalia"
+ },
+    {
+   "question": "Of what country is Ljubljana the capital?",
+   "answer": "Slovenia"
+ },
+  {
+   "question": "Of what country is Bratislava the capital?",
+   "answer": "Slovakia"
+ },
+  {
+   "question": "Of what country is Belgrade the capital?",
+   "answer": "Serbia"
+ },
+  {
+   "question": "Of what country is Riyadh the capital?",
+   "answer": "Nigeria"
+ },
+  {
+   "question": "Of what country is Bucharest the capital?",
+   "answer": "Romania"
+ },
+  {
+   "question": "Of what country is Doha the capital?",
+   "answer": "Qatar"
+ },
+  {
+   "question": "Of what territory is San Juan the capital?",
+   "answer": "Puerto Rico"
+ },
+  {
+   "question": "Of what country is Lisbon the capital?",
+   "answer": "Portugal"
+ },
+  {
+   "question": "Of what country is Warsaw the capital?",
+   "answer": "Poland"
+ },
+  {
+   "question": "Of what country is Manila the capital?",
+   "answer": "Phillipines"
+ },
+  {
+   "question": "Of what country is Lima the capital?",
+   "answer": "Peru"
+ },
+  {
+   "question": "Of what country is Islamabad the capital?",
+   "answer": "Pakistan"
+ },
+  {
+   "question": "Of what country is Oslo the capital?",
+   "answer": "Norway"
+ },
+  {
+   "question": "Of what country is Pyongyang the capital?",
+   "answer": "North Korea"
+ },
+  {
    "question": "Of what country is Abuja the capital?",
    "answer": "Nigeria"
  },
