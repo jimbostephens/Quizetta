@@ -1,5 +1,21 @@
 [
   {
+   "question": "What was the first feature-length animated film??",
+   "answer": "Snow White and the Seven Dwarfs"
+ },
+  {
+   "question": "What uncharged particle did English physicist James Chadwick discover in 1932?",
+   "answer": "The neutron"
+ },
+  {
+   "question": "What 635 metric ton statue was completed in Brazil in 1931?",
+   "answer": "Christ the Redeemer"
+ },
+  {
+   "question": "What Central American country is named after Jesus Christ?",
+   "answer": "El Salvador"
+ },
+  {
    "question": "What did American astronomer and telescope maker Clyde Tombaugh discover in 1930?",
    "answer": "Pluto"
  },
@@ -593,7 +609,7 @@
  },
  {
    "question": "What is the capital of Jamaica?",
-   "answer": "Kingstown"
+   "answer": "Kingston"
  },
  {
    "question": "What is the capital of Sudan?",
