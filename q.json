@@ -1,6 +1,10 @@
 [
+    {
+   "question": "At what temperature are the Celsius and Fahrenheit scales equal?",
+   "answer": "-40°"
+ },
   {
-   "question": "What was the first feature-length animated film??",
+   "question": "What was the first feature-length animated film?",
    "answer": "Snow White and the Seven Dwarfs"
  },
   {
@@ -156,7 +160,7 @@
    "answer": "Theodore Roosevelt"
  },
   {
-   "question": "What monarch's reign of almost 64 years ended in 1901??",
+   "question": "What monarch's reign of almost 64 years ended in 1901?",
    "answer": "Queen Victoria"
  },
   {
