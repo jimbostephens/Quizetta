@@ -1,4 +1,41 @@
-[
+[  
+  {
+   "question": "Who played the title roles in the 1967 film Bonnie and Clyde?",
+   "answer": "Warren Beatty and Faye Dunaway"
+ },
+  {
+   "question": "What Samuel Taylor Coleridge poem is the origin of the idiom 'an albatross around one's neck'?",
+   "answer": "The Rime of the Ancient Mariner"
+ },
+  {
+   "question": "Who shoots the arrow that kills Achilles in Virgil's Aeneid?",
+   "answer": "Paris"
+ },
+  {
+   "question": "What archaic term for a red gemstone is now used to mean a cluster of boils?",
+   "answer": "Carbuncle"
+ },
+  {
+   "question": "What Shakespeare play features an ancient king of Britain and his daughter Imogen?",
+   "answer": "Cymbeline"
+ },
+  {
+   "question": "What Romantic poet wrote the lines, 'Nothing beside remains. Round the decay / Of that colossal wreck, boundless and bare / The lone and level sans stretch fast away.'?",
+   "answer": "Percy Bysshe Shelley"
+ },
+
+  {
+   "question": "What English poet published The Rime of the Ancient Mariner in 1798?",
+   "answer": "Samuel Taylor Coleridge"
+ },
+  {
+   "question": "What Romantic era poet wrote the lines, 'To see a World in a Grain of Sand / And a Heaven in a Wild Flower'?",
+   "answer": "William Blake"
+ },
+  {
+   "question": "The name of what ancient Carthaginian general's name means 'the grace of Baal'?",
+   "answer": "Hannibal"
+ },
     {
    "question": "At what temperature are the Celsius and Fahrenheit scales equal?",
    "answer": "-40°"
