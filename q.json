@@ -205,7 +205,7 @@
  },
   {
    "question": "Of what country is Abu Dhabi the capital?",
-   "answer": "United Arab Emirates"
+   "answer": "The United Arab Emirates"
  },
   {
    "question": "Of what country is Kyiv the capital?",
@@ -277,7 +277,7 @@
  },
   {
    "question": "Of what country is Manila the capital?",
-   "answer": "Phillipines"
+   "answer": "The Phillipines"
  },
   {
    "question": "Of what country is Lima the capital?",
@@ -373,7 +373,7 @@
  },
   {
    "question": "Of what territory is Stanley the capital?",
-   "answer": "Falkland Islands"
+   "answer": "The Falkland Islands"
  },
   {
    "question": "Of what country is Addis Ababa the capital?",
@@ -385,15 +385,11 @@
  },
   {
    "question": "Of what country is Kinshasa the capital?",
-   "answer": "Democratic Republic of the Congo"
+   "answer": "The Democratic Republic of the Congo"
  },
   {
    "question": "Of what country is Prague the capital?",
-   "answer": "Czech Republic"
- },
-  {
-   "question": "Of what country is Zagreb the capital?",
-   "answer": "Croatia"
+   "answer": "The Czech Republic"
  },
   {
    "question": "Of what country is Zagreb the capital?",
