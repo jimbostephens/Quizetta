@@ -1,5 +1,5 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Candara', Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,35 +14,36 @@ body {
 .container {
     text-align: center;
     background-color: #dedede;
-    padding: 20px;
+    /* padding: 20px; */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     width: 90%;
-    margin: 20px 0;
+    /* margin: 20px 0; */
 }
 
 h1 {
-    color: #c7c7c7;
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    color: #666666;
+    font-size: 3em;
+    margin: 0;
     font-weight: bold;
+    padding: 20px;
 }
 
 #loading-message {
-    font-size: 1.5em;
-    margin: 20px 0;
+    font-size: 1.25em;
+    margin: 15px 0;
 }
 
 #question {
-    font-size: 1.5em;
-    margin: 20px 0;
+    font-size: 1.25em;
+    margin: 15px 0;
 }
 
 #answer {
-    font-size: 1.5em;
+    font-size: 1.25em;
     font-weight: bold;
-    padding-top: 10px;
+    /* padding-top: 5px; */
 }
 
 .buttons {
@@ -74,6 +75,7 @@ button {
     background-color: #666666;
     transition: background-color 0.3s ease;
     width: 175px;
+    font-family: inherit;
 }
 
 button:hover {
