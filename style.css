@@ -75,6 +75,7 @@ button {
     background-color: #666666;
     transition: background-color 0.3s ease;
     width: 175px;
+    font-family: inherit;
 }
 
 button:hover {
