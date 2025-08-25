@@ -27,21 +27,21 @@ h1 {
     font-size: 3em;
     margin: 0;
     font-weight: bold;
-    padding: 10px;
+    padding: 20px;
 }
 
 #loading-message {
-    font-size: 1.5em;
+    font-size: 1.25em;
     margin: 20px 0;
 }
 
 #question {
-    font-size: 1.5em;
+    font-size: 1.25em;
     margin: 20px 0;
 }
 
 #answer {
-    font-size: 1.5em;
+    font-size: 1.25em;
     font-weight: bold;
     /* padding-top: 5px; */
 }
