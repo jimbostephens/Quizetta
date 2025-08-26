@@ -24,24 +24,24 @@ body {
 
 h1 {
     color: #666666;
-    font-size: 3em;
+    font-size: 36pt;
     margin: 0;
     font-weight: bold;
     padding: 20px;
 }
 
 #loading-message {
-    font-size: 1.25em;
+    font-size: 15pt;
     margin: 15px 0;
 }
 
 #question {
-    font-size: 1.25em;
+    font-size: 15pt;
     margin: 15px 0;
 }
 
 #answer {
-    font-size: 1.25em;
+    font-size: 15pt;
     font-weight: bold;
     /* padding-top: 5px; */
 }
@@ -67,7 +67,7 @@ h1 {
 
 button {
     padding: 10px 20px;
-    font-size: 1em;
+    font-size: 12pt;
     cursor: pointer;
     border: none;
     border-radius: 25px;
