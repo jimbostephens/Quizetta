@@ -31,17 +31,17 @@ h1 {
 }
 
 #loading-message {
-    font-size: 15pt;
+    font-size: 16pt;
     margin: 15px 0;
 }
 
 #question {
-    font-size: 15pt;
+    font-size: 16pt;
     margin: 15px 0;
 }
 
 #answer {
-    font-size: 15pt;
+    font-size: 16pt;
     font-weight: bold;
     /* padding-top: 5px; */
 }
