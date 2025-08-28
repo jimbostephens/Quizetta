@@ -1,4 +1,12 @@
-[ 
+[
+  {
+   "question": "What French author wrote the 1844 adventure novel The Three Musketeers?",
+   "answer": "Alexandre Dumas"
+ },
+  {
+   "question": "What ancient Greek historian did Cicero call the father of history?",
+   "answer": "Herodotus"
+ },
   {
    "question": "Who wrote the 1854 narrative poem The Charge of the Light Brigade?",
    "answer": "Alfred, Lord Tennyson"
