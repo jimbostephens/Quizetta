@@ -12,7 +12,6 @@ body {
 }
 
 .container {
-    font-family: 'Impact';
     text-align: center;
     background-color: #dedede;
     /* padding: 20px; */
@@ -24,7 +23,6 @@ body {
 }
 
 h1 {
-    font-family: 'Impact';
     color: #666666;
     font-size: 3em;
     margin: 0;
@@ -38,7 +36,6 @@ h1 {
 }
 
 #question {
-    font-family: 'Impact';
     font-size: 1.25em;
     margin: 15px 0;
 }
