@@ -1,5 +1,33 @@
 [
   {
+   "question": "What planet's two moons are named Phobos and Deimos?",
+   "answer": "Mars"
+ },
+  {
+   "question": "Who composed the opera Carmen, first performed in Paris in 1875?",
+   "answer": "Georges Bizet"
+ },
+  {
+   "question": "What oceanic trench is the deepest on Earth?",
+   "answer": "The Mariana Trench"
+ },
+  {
+   "question": "What set rules governing the sport of boxing was published in the UK in 1867?",
+   "answer": "The Marquess of Queensberry Rules"
+ },
+  {
+   "question": "What was the pen name of children's author Charles Dodgson?",
+   "answer": "Lewis Carroll"
+ },
+  {
+   "question": "What 19th century Swedish physicist invented dynamite?",
+   "answer": "Alfred Nobel"
+ },
+  {
+   "question": "What Scottish physicist published a paper in 1865 which showed that electricity, magnetism, and light are manifestations of a single fundamental force?",
+   "answer": "James Clerk Maxwell"
+ },
+  {
    "question": "What French author wrote the 1844 adventure novel The Three Musketeers?",
    "answer": "Alexandre Dumas"
  },
