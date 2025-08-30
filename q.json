@@ -1,5 +1,33 @@
 [
   {
+   "question": "The last words of which of Shakespeare's title characters are 'O true apothecary, / Thy drugs are quick. Thus with a kiss I die.'?",
+   "answer": "Romeo"
+ },
+  {
+   "question": "The last words of which of Shakespeare's title characters are 'I kissed there ere I killed thee. No way but this, / Killing myself, to die upon a kiss.'?",
+   "answer": "Othello"
+ },
+  {
+   "question": "Hangul is the native alphabet of which language?",
+   "answer": "Korean"
+ },
+  {
+   "question": "The title couple of what opera by Gershwin are a disabled beggar and his lover?",
+   "answer": "Porgy and Bess"
+ },
+  {
+   "question": "The title couple of what opera by Wagner are a Breton nobleman and an Irish princess?",
+   "answer": "Tristan and Isolde"
+ },
+  {
+   "question": "The title couple of what opera by Purcell are a Carthaginian queen and a Trojan prince?",
+   "answer": "Dido and Aeneas"
+ },
+  {
+   "question": "What French actor and filmmaker played Monsieur Hulot in films such as 1958's Mon Oncle?",
+   "answer": "Jacques Tati"
+ },
+  {
    "question": "Who became the first Prime Minister of Great Britain in 1721?",
    "answer": "Robert Walpole"
  },
