@@ -1,6 +1,22 @@
 [
   {
-   "question": "What is the tallest structure in the world?",
+   "question": "The name of what Cambodian temple complex is Khmer for City of Temples?",
+   "answer": "Angkor Wat"
+ },
+  {
+   "question": "Who founded the Mongol Empire?",
+   "answer": "Genghis Khan"
+ },
+  {
+   "question": "What is the brightest star in the night sky, its name deriving from the Greek for glowing or scorching?",
+   "answer": "Sirius"
+ },
+  {
+   "question": "What is the closest star to the Sun?",
+   "answer": "Proxima Centauri"
+ },
+  {
+   "question": "What is the world's tallest structure?",
    "answer": "The Burj Khalifa"
  },
   {
