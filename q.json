@@ -1,4 +1,4 @@
-[  
+[ 
   {
    "question": "Which German theoretical physicist gives his name to a unit of length equal to about 10^−20 the diameter of a proton?",
    "answer": "Max Planck"
@@ -72,8 +72,8 @@
    "answer": "Beowulf"
  },
   {
-   "question": "The name of which king of the Franks comes from the French for 'Charles the great'?",
-   "answer": ""
+   "question": "The name of which king of the Franks and disputed Holy Roman Emperor comes from the French for 'Charles the great'?",
+   "answer": "Charlemagne"
  },
 
   {
@@ -114,7 +114,7 @@
  },
   {
    "question": "What is the second-largest dwarf planet in the solar system?",
-   "answer": "Eris"
+       "answer": "Eris"
  },
  {
    "question": "Which Portuguese explorer led the first circumnavigation of Earth, though he was killed in battle before its completion?",
@@ -1358,7 +1358,7 @@
    "answer": "Woody Allen"
  },
  {
-   "question": "Which Italian composer won the Academy Award for Best Original Score for his work on 2015’s The Hateful Eight?",
+   "question": "Which Italian composer won his first competitive Academy Award for his score for 2015’s The Hateful Eight?",
    "answer": "Ennio Morricone"
  },
  {
@@ -1457,7 +1457,7 @@
    "question": "What is the chemical symbol for gold?",
    "answer": "Au"
  },
- {
+  {
    "question": "Which ancient Greek comic playwright wrote The Wasps, The Birds, and The Frogs?",
    "answer": "Aristophanes"
  },
