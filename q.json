@@ -1,4 +1,20 @@
-[ 
+[
+  {
+   "question": "Which 1841 short story by Edgar Allen Poe is considered the first modern detective story?",
+   "answer": "The Murders in the Rue Morgue"
+ },
+  {
+   "question": "Which hero of Greek mythology beheaded Medusa?",
+   "answer": "Perseus"
+ },
+  {
+   "question": "In Greek mythology, which Titan created humanity from clay, and was later punished by Zeus for giving humans fire?",
+   "answer": "Prometheus"
+ },
+  {
+   "question": "Which 1975 Stanley Kubrick film was based on a novel by William Makepeace Thackeray?",
+   "answer": "Barry Lyndon"
+ },
   {
    "question": "Who wrote the 1848 satirical novel Vanity Fair?",
    "answer": "William Makepeace Thackeray"
@@ -501,7 +517,7 @@
    "answer": "Edwin Hubble"
  },
   {
-   "question": "Which Spouth African activist and politician was released after 27 years as a political prisoner in 1990?",
+   "question": "Which South African activist and politician was released after 27 years as a political prisoner in 1990?",
    "answer": "Nelson Mandela"
  },
   {
@@ -640,7 +656,6 @@
    "question": "Which Romantic poet wrote the lines, 'Nothing beside remains. Round the decay / Of that colossal wreck, boundless and bare / The lone and level sands stretch fast away'?",
    "answer": "Percy Bysshe Shelley"
  },
-
   {
    "question": "Which English poet published The Rime of the Ancient Mariner in 1798?",
    "answer": "Samuel Taylor Coleridge"
