@@ -1,5 +1,17 @@
 [
   {
+   "question": "Which Chinese river is the third longest in the world?",
+   "answer": "The Yangtze"
+ },
+  {
+   "question": "Which South American river is the largest on the world's by discharge?",
+   "answer": "The Amazon"
+ },
+  {
+   "question": "Which African river is the longest in the world?",
+   "answer": "The Nile"
+ },
+  {
    "question": "What does the Greek prefix 'cutane-' mean?",
    "answer": "Skin"
  },
@@ -249,7 +261,7 @@
  },
   {
    "question": "What is the highest mountain in Africa?",
-   "answer": "Kilimanjaro"
+   "answer": "Mount Kilimanjaro"
  },
   {
    "question": "In which country is the mouth of the Amazon river?",
