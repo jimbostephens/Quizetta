@@ -1,10 +1,62 @@
 [
   {
+   "question": "Under what pen name did Mary Ann Evans write the Victorian novels The Mill on the Floss and Middlemarch?",
+   "answer": "George Eliot"
+ },
+  {
+   "question": "Who wrote the 1951 post-apocalyptic science fiction novel The Day of the Triffids?",
+   "answer": "John Wyndham"
+ },
+  {
+   "question": "Who wrote the 1930s comic novels Right Ho, Jeeves and The Code of the Woosters?",
+   "answer": "PG Wodehouse"
+ },
+  {
+   "question": "Who wrote the 1818 English Gothic novel Frankenstein?",
+   "answer": "Mary Shelley"
+ },
+  {
+   "question": "Who wrote the 1929 essay A Room of One's Own?",
+   "answer": "Virginia Woolf"
+ },
+  {
+   "question": "Who wrote the epic adventure novel Moby-Dick?",
+   "answer": "Herman Melville"
+ },
+  {
+   "question": "Who wrote the 1831 French Gothic novel The Hunchback of Notre-Dame?",
+   "answer": "Victor Hugo"
+ },
+  {
+   "question": "Who wrote the 1906 adventure novel White Fang?",
+   "answer": "Jack London"
+ },
+  {
+   "question": "Who wrote the 1866 Realist novel Crime and Punishment?",
+   "answer": "Fyodor Dostoevsky"
+ },
+  {
+   "question": "Who wrote the 1847 coming-of-age novel Jane Eyre?",
+   "answer": "Charlotte Brontë"
+ },
+  {
+   "question": "Who wrote the 1932 dystopian novel Brave New World?",
+   "answer": "Aldous Huxley"
+ },
+  {
+   "question": "Who wrote the 1966 historical novel Wide Sargasso Sea?",
+   "answer": "Jean Rhys"
+ },
+  {
+   "question": "Who wrote the 1965 true-crime novel In Cold Blood?",
+   "answer": "Truman Capote"
+ },
+  {
    "question": "Which Chinese river is the third longest in the world?",
    "answer": "The Yangtze"
  },
   {
-   "question": "Which South American river is the largest on the world's by discharge?",
+   "question": "Which South American river is the largest in the world by discharge?",
    "answer": "The Amazon"
  },
   {
