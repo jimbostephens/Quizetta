@@ -28,7 +28,7 @@
    "answer": "George Eliot"
  },
   {
-   "question": "Who wrote the 1951 post-apocalyptic science fiction novel The Day of the Triffids?",
+   "question": "Who wrote the 1951 post-apocalyptic sci-fi novel The Day of the Triffids?",
    "answer": "John Wyndham"
  },
   {
@@ -56,7 +56,7 @@
    "answer": "Jack London"
  },
   {
-   "question": "Who wrote the 1866 Realist novel Crime and Punishment?",
+   "question": "Who wrote the 1866 novel Crime and Punishment?",
    "answer": "Fyodor Dostoevsky"
  },
   {
@@ -68,7 +68,7 @@
    "answer": "Aldous Huxley"
  },
   {
-   "question": "Who wrote the 1966 historical novel Wide Sargasso Sea?",
+   "question": "Who wrote the 1966 novel Wide Sargasso Sea?",
    "answer": "Jean Rhys"
  },
   {
@@ -144,7 +144,7 @@
    "answer": "Bob Dylan"
  },
   {
-   "question": "Who wrote the late-fourteenth-century frame story The Canterbury Tales?",
+   "question": "Who wrote the late-fourteenth-century publication The Canterbury Tales?",
    "answer": "Geoffrey Chaucer"
  },
   {
@@ -204,11 +204,11 @@
    "answer": "Latin, Greek, and Cyrillic"
  },
   {
-   "question": "Which American realism artist painted 1942's Nighthawks?",
+   "question": "Which American artist painted 1942's Nighthawks?",
    "answer": "Edward Hopper"
  },
   {
-   "question": "Which video game company was founded in 1889 to produce hanafuda playing cards?",
+   "question": "Which video game company was originally founded in 1889 to produce hanafuda playing cards?",
    "answer": "Nintendo"
  },
   {
@@ -216,7 +216,7 @@
    "answer": "George Frideric Handel"
  },
   {
-   "question": "Which First World War poet and soldier wrote the lines, 'My friend, you would not tell with such high zest / To children ardent for some desperate glory, / The old Lie: Dulce et decorum est / Pro patria mori.'?",
+   "question": "Which First World War poet and soldier wrote the lines, \"My friend, you would not tell with such high zest / To children ardent for some desperate glory, / The old Lie: Dulce et decorum est / Pro patria mori.\"?",
    "answer": "Wilfred Owen"
  },
   {
@@ -312,8 +312,8 @@
    "answer": "Fe"
  },
   {
-   "question": "Which Babylonian legal text dating from the 18th century BC was inscribed on a basalt stele which now besides on the Louvre?",
-   "answer": " The Code of Hammurabi"
+   "question": "Which Babylonian legal text dating from the 18th century BC was inscribed on a basalt stele which now resides on the Louvre?",
+   "answer": "The Code of Hammurabi"
  },
   {
    "question": "Conquistador Hernán Cortés led an expedition that caused the downfall of which empire in the early 16th century?",
@@ -328,7 +328,7 @@
    "answer": "The Tunguska event"
  },
   {
-   "question": "Who is the main character in the folktale collection One Thousand and One Nights, who tells a thousand stories to delay her execution at the hands of the sultan?",
+   "question": "Who is the main character in the folktale collection One Thousand and One Nights, who tells stories to delay her execution at the hands of the sultan?",
    "answer": "Scheherazade"
  },
   {
@@ -385,7 +385,7 @@
    "answer": "Genghis Khan"
  },
   {
-   "question": "What is the brightest star in the night sky, its name deriving from the Greek for glowing or scorching?",
+   "question": "What is the brightest star in the night sky, its name deriving from the Greek for 'glowing' or 'scorching'?",
    "answer": "Sirius"
  },
   {
@@ -401,8 +401,8 @@
    "answer": "Brazil, Russia, India, China, and South Africa"
  },
   {
-   "question": "What is the second-largest dwarf planet in the solar system?",
-       "answer": "Eris"
+   "question": "After Pluto, what is the second-largest dwarf planet in the solar system?",
+   "answer": "Eris"
  },
  {
    "question": "Which Portuguese explorer led the first circumnavigation of Earth, though he was killed in battle before its completion?",
@@ -453,11 +453,11 @@
    "answer": "August Ferdinand Möbius"
  },
   {
-   "question": "The last words of which of Shakespeare's title characters are 'O true apothecary, / Thy drugs are quick. Thus with a kiss I die.'?",
+   "question": "The last words of which of Shakespeare's title characters are \"O true apothecary, / Thy drugs are quick. Thus with a kiss I die.\"?",
    "answer": "Romeo"
  },
   {
-   "question": "The last words of which of Shakespeare's title characters are 'I kissed thee ere I killed thee. No way but this, / Killing myself, to die upon a kiss.'?",
+   "question": "The last words of which of Shakespeare's title characters are \"I kissed thee ere I killed thee. No way but this, / Killing myself, to die upon a kiss.\"?",
    "answer": "Othello"
  },
   {
@@ -533,7 +533,7 @@
    "answer": "Pyotr Ilyich Tchaikovsky"
  },
   {
-   "question": "What was the title of the first Sherlock Holmes story?",
+   "question": "What is the title of the first Sherlock Holmes story?",
    "answer": "A Study in Scarlet"
  },
   {
@@ -665,7 +665,7 @@
    "answer": "Tim Berners-Lee"
  },
   {
-   "question": "Which American astronomer proved that there are galaxies beyond the Milky Way? There is a space telescope named in his honour which has been in operation since 1990.",
+   "question": "Which American astronomer proved that there are galaxies beyond the Milky Way, and has a space telescope named in his honour which has been in operation since 1990?",
    "answer": "Edwin Hubble"
  },
   {
@@ -681,7 +681,7 @@
    "answer": "Bhopal"
  },
   {
-   "question": "What is the bestselling album of all time?",
+   "question": "What is the best-selling album of all time?",
    "answer": "Michael Jackson's Thriller"
  },
   {
@@ -717,7 +717,7 @@
    "answer": "Michael Collins"
  },
   {
-   "question": "Who were the first two men on the moon?",
+   "question": "Who were the first two men to set foot on the moon?",
    "answer": "Neil Armstrong and Edwin 'Buzz' Aldrin"
  },
   {
@@ -813,7 +813,7 @@
    "answer": "Samuel Taylor Coleridge"
  },
   {
-   "question": "Which Romantic era poet wrote the lines, 'To see a World in a Grain of Sand / And a Heaven in a Wild Flower'?",
+   "question": "Which Romantic era poet wrote the lines, \"To see a World in a Grain of Sand / And a Heaven in a Wild Flower.\"?",
    "answer": "William Blake"
  },
   {
@@ -913,7 +913,7 @@
    "answer": "Bolivia and Paraguay"
  },
   {
-   "question": "Which Russian mystic was, by some accounts, poisoned, shot, castrated and drowned in 1916?",
+   "question": "Which Russian mystic was, by some accounts, poisoned, shot, castrated, and drowned in 1916?",
    "answer": "Grigory Rasputin"
  },
   {
@@ -938,7 +938,7 @@
  },
   {
    "question": "Who assassinated Archduke Franz Ferdinand of Austria in 1914?",
-   "answer": "Gavrilo  Princip"
+   "answer": "Gavrilo Princip"
  },
   {
    "question": "Which New Zealand physicist discovered the proton in 1919?",
@@ -1705,11 +1705,11 @@
    "answer": "Sudden Impact"
  },
  {
-   "question": "In which film does Lauren Bacall deliver the line, ‘You know how to whistle don’t you, Steve? You just put your lips together and blow.’?",
+   "question": "In which film does Lauren Bacall deliver the line, \"You know how to whistle don’t you, Steve? You just put your lips together and blow.\"?",
    "answer": "To Have and Have Not"
  },
  {
-   "question": "In which 1932 film is the line ‘We accept her, one of us, gooble gobble’ chanted?",
+   "question": "In which 1932 film is the line \"We accept her, one of us, gooble gobble\" chanted?",
    "answer": "Freaks"
  },
  {
@@ -1717,11 +1717,7 @@
    "answer": "13th"
  },
  {
-   "question": "John Travolta starred in what L Ron Hubbard-inspired sci-fi of 2000?",
-   "answer": "Battlefield Earth"
- },
- {
-   "question": "Which three films were winners of the 'big five' Oscars (best picture, best director, best actor, best actress, best screenplay)?",
+   "question": "Which three films were winners of the 'big five' Oscars (best picture, best director, best actor, best actress, and best screenplay)?",
    "answer": "It Happened One Night, One Flew Over the Cuckoo's Nest, and The Silence of the Lambs"
  },
  {
@@ -1981,7 +1977,7 @@
    "answer": "Maurice Sendak"
  },
  {
-   "question": "Who wrote the 1965 science fiction novel Dune?",
+   "question": "Who wrote the 1965 sci-fi novel Dune?",
    "answer": "Frank Herbert"
  },
  {
@@ -1989,7 +1985,7 @@
    "answer": "John Steinbeck"
  },
  {
-   "question": "Who wrote the 1979 comic science fiction novel The Hitchhiker's Guide to the Universe?",
+   "question": "Who wrote the 1979 comic sci-fi novel The Hitchhiker's Guide to the Universe?",
    "answer": "Douglas Adams"
  },
  {
@@ -2005,7 +2001,7 @@
    "answer": "Marie Curie"
  },
  {
-   "question": "Which politician won the Nobel Peace Prize in 1991, and defended the Burmese military against allegations of genocide at the Hague in 2019?",
+   "question": "Which politician won the Nobel Peace Prize in 1991 and defended the Burmese military against allegations of genocide at the Hague in 2019?",
    "answer": "Aung San Suu Kyi"
  },
  {
