@@ -1,5 +1,77 @@
 [
   {
+   "question": "The word sauna comes from which language?",
+   "answer": "Finnish"
+ },
+  {
+   "question": "Which chemical element has the symbol Mg?",
+   "answer": "Mercury"
+ },
+  {
+   "question": "Used to measure gemstones and pearls, what unit of mass is equal to 200 mg??",
+   "answer": "The carat"
+ },
+  {
+   "question": "Steel is an alloy primarily consisting of which two metals?",
+   "answer": "Iron and carbon"
+ },
+  {
+   "question": "Bronze is an alloy c of which two metals?",
+   "answer": "Copper and tin"
+ },
+  {
+   "question": "Brass is an alloy primarily consisting of which two metals?",
+   "answer": "Copper and zinc"
+ },
+  {
+   "question": "Which chemical element has the symbol Pb?",
+   "answer": "Lead"
+ },
+  {
+   "question": "Which chemical element has the symbol Fe?",
+   "answer": "Iron"
+ },
+  {
+   "question": "Which marsupial is the only non-primate with fingerprints?",
+   "answer": "The koala"
+ },
+  {
+   "question": "Which chemical element has the symbol Sn?",
+   "answer": "Tin"
+ },
+  {
+   "question": "Which chemical element has the symbol Na?",
+   "answer": "Sodium"
+ },
+  {
+   "question": "Which chemical element has the symbol K?",
+   "answer": "Potassium"
+ },
+  {
+   "question": "Which chemical element has the symbol Au?",
+   "answer": "Gold"
+ },
+  {
+   "question": "Which chemical element has the symbol Ag?",
+   "answer": "Silver"
+ },
+  {
+   "question": "Which chemical element has the symbol Cu?",
+   "answer": "Copper"
+ },
+  {
+   "question": "What is the chemical symbol for tin?",
+   "answer": "Sn"
+ },
+  {
+   "question": "What is the chemical symbol for potassium?",
+   "answer": "K"
+ },
+  {
+   "question": "What is the chemical symbol for sodium?",
+   "answer": "Na"
+ },
+  {
    "question": "In Norse mythology, what species of animal pulls Thor's chariot?",
    "answer": "Goats"
  },
@@ -36,7 +108,7 @@
    "answer": "The lek"
  },
   {
-   "question": "Under what pen name did Mary Ann Evans write the Victorian novels The Mill on the Floss and Middlemarch?",
+   "question": "Under what pen name did Victorian novelist Mary Ann Evans write The Mill on the Floss and Middlemarch?",
    "answer": "George Eliot"
  },
   {
@@ -44,7 +116,7 @@
    "answer": "John Wyndham"
  },
   {
-   "question": "Who wrote the 1930s comic novels Right Ho, Jeeves and The Code of the Woosters?",
+   "question": "Who wrote the 1930s comic novels The Code of the Woosters and Right Ho, Jeeves?",
    "answer": "PG Wodehouse"
  },
   {
