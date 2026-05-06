@@ -13,6 +13,7 @@ const revealBtn = document.getElementById('reveal-btn');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 const loadingMessageEl = document.getElementById('loading-message');
+const questionImageEl = document.getElementById('question-image');
 
 // Fetch and parse data from a JSON file
 function fetchQuestions() {
