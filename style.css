@@ -32,12 +32,12 @@ h1 {
 
 #loading-message {
     font-size: 16pt;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 #question {
     font-size: 16pt;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 #answer {
@@ -121,7 +121,7 @@ button:hover {
 
 .footer-links a {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     text-decoration: underline;
     color: #666666;
 }
