@@ -121,7 +121,7 @@ button:hover {
 
 .footer-links a {
     display: block;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
     text-decoration: underline;
     color: #666666;
 }
