@@ -79,7 +79,7 @@ h1 {
 }
 
 button {
-    padding: 10px 10px;
+    padding: 5px 5px;
     font-size: 14pt;
     cursor: pointer;
     border: none;
@@ -87,7 +87,7 @@ button {
     color: #fff;
     background-color: #666666;
     transition: background-color 0.3s ease;
-    width: 175px;
+    width: 180px;
     font-family: inherit;
     font-weight: bold;
 }
