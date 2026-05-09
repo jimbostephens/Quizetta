@@ -92,10 +92,9 @@ button {
     font-weight: bold;
 }
 
-button:first-of-type {
-    font-size:14pt;
-    background-color: #660033
-}
+#reveal-btn {
+    background-color: #660033;
+    font-weight: bold;
 
 .hidden {
     display: none;
