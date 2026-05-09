@@ -1,10 +1,5 @@
 [
   {
-    "question": "Which country's flag is this?",
-    "answer": "Andorra",
-    "image": "images/flags/0104.svg"
-  },
-  {
    "question": "The word sauna comes from which language?",
    "answer": "Finnish"
  },
@@ -2097,4 +2092,74 @@
    "question": "Who won the Nobel Prize in Physics in 1945 for his discovery of the Exclusion Principle, which is named for him?",
    "answer": "Wolfgang Pauli"
  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Andorra",
+    "image": "images/flags/0104.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "The Untied Arab Emirates",
+    "image": "images/flags/0105.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Afghanistan",
+    "image": "images/flags/0106.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Antigua and Barbuda",
+    "image": "images/flags/0106.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Anguilla",
+    "image": "images/flags/0109.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Albania",
+    "image": "images/flags/0111.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Armenia",
+    "image": "images/flags/0112.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Angola",
+    "image": "images/flags/0113.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Argentina",
+    "image": "images/flags/0116.svg"
+  },
+  {
+    "question": "Which self-governing territory's flag is this?",
+    "answer": "American Samoa",
+    "image": "images/flags/0119.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Austria",
+    "image": "images/flags/0120.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Australia",
+    "image": "images/flags/0121.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Aruba",
+    "image": "images/flags/0123.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Azerbaijan",
+    "image": "images/flags/0126.svg"
+  },
 ]
