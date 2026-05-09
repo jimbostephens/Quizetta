@@ -48,7 +48,7 @@ h1 {
 
 .buttons {
     position: fixed;
-    top: 75%;
+    top: 70%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -80,7 +80,7 @@ h1 {
 
 button {
     padding: 10px 10px;
-    font-size: 12pt;
+    font-size: 14pt;
     cursor: pointer;
     border: none;
     border-radius: 25px;
@@ -94,7 +94,6 @@ button {
 
 #reveal-btn {
     background-color: #000000;
-    font-size: 14pt;
     font-weight: bold;
 }
 
