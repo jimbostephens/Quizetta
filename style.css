@@ -92,22 +92,18 @@ button {
     font-weight: bold;
 }
 
-button:hover {
-    background-color: #666666;
+button:first-of-type {
+    font-size:14pt;
+    background-color: #660033
 }
 
 .hidden {
     display: none;
 }
 
-/* New style for disabled buttons */
 .disabled-btn {
     background-color: #a0a0a0;
     color: #e0e0e0;
-}
-
-.disabled-btn:hover {
-    background-color: #a0a0a0;
 }
 
 .footer-links {
