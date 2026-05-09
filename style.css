@@ -4,7 +4,7 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    background-color: #111111;
+    background-color: #ececec;
     margin: 0;
     padding-bottom: 20px;
     box-sizing: border-box;
@@ -13,7 +13,7 @@ body {
 
 .container {
     text-align: center;
-    background-color: #7b8a8b;
+    background-color: #dedede;
     /* padding: 20px; */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -85,7 +85,7 @@ button {
     border: none;
     border-radius: 25px;
     color: #fff;
-    background-color: #7b8a8b;
+    background-color: #666666;
     transition: background-color 0.3s ease;
     width: 190px;
     font-family: inherit;
@@ -101,7 +101,7 @@ button {
 }
 
 .disabled-btn {
-    background-color: #ced4da;
+    background-color: #a0a0a0;
 }
 
 .footer-links {
@@ -118,7 +118,7 @@ button {
     display: block;
     margin-bottom: 5px;
     text-decoration: underline;
-    color: #7b8a8b;
+    color: #666666;
 }
 
 .footer-links a:last-child {
