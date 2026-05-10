@@ -2161,5 +2161,80 @@
     "question": "Which country's flag is this?",
     "answer": "Azerbaijan",
     "image": "images/flags/0126.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Bosnia and Herzegovina",
+    "image": "images/flags/0201.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Barbados",
+    "image": "images/flags/0202.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Bangladesh",
+    "image": "images/flags/0204.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Belgium",
+    "image": "images/flags/0205.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Burkina Faso",
+    "image": "images/flags/0206.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Bulgaria",
+    "image": "images/flags/0207.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Bahrain",
+    "image": "images/flags/0208.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Burundi",
+    "image": "images/flags/0209.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Benin",
+    "image": "images/flags/0210.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Brazil",
+    "image": "images/flags/0218.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "The Bahamas",
+    "image": "images/flags/0219.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Bhutan",
+    "image": "images/flags/0220.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Botswana",
+    "image": "images/flags/0223.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Belarus",
+    "image": "images/flags/0225.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "Belize",
+    "image": "images/flags/0226.svg"
   }
 ]
