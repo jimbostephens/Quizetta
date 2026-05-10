@@ -71,7 +71,7 @@ h1 {
 
 #question-image {
     max-width: 100%;  /* Ensures the image fits the screen */
-    max-height: 50%;
+    max-height: 25%;
     margin: 20px 0;   /* Adds some breathing room around the flag */
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Makes it look polished */
