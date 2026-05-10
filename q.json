@@ -2247,6 +2247,11 @@
     "answer": "Switzerland",
     "image": "images/flags/0308.svg"
   },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Ivory Coast (Côte d'Ivoire)",
+    "image": "images/flags/0309.svg"
+  },
   {
     "question": "Which country's flag is this?",
     "answer": "Chile",
@@ -2286,6 +2291,11 @@
     "question": "Which country's flag is this?",
     "answer": "The Czech Republic (Czechia)",
     "image": "images/flags/0326.svg"
+  },
+  {
+    "question": "Which country's flag is this?",
+    "answer": "",
+    "image": "images/flags/04.svg"
   },
  {
     "question": "Which country's flag is this?",
@@ -2441,5 +2451,85 @@
     "question": "Which country's flag is this?",
     "answer": "Guyana",
     "image": "images/flags/0725.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "",
+    "image": "images/flags/08.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Honduras",
+    "image": "images/flags/0814.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Croatia",
+    "image": "images/flags/0818.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Haiti",
+    "image": "images/flags/0820.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Hungary",
+    "image": "images/flags/0821.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Indonesia",
+    "image": "images/flags/0904.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Ireland",
+    "image": "images/flags/0905.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Israel",
+    "image": "images/flags/0912.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "India",
+    "image": "images/flags/0914.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Iraq",
+    "image": "images/flags/0917.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Iran",
+    "image": "images/flags/0918.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Iceland",
+    "image": "images/flags/0919.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Italy",
+    "image": "images/flags/0920.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Jamaica",
+    "image": "images/flags/1013.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Jordan",
+    "image": "images/flags/1015.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Japan",
+    "image": "images/flags/1016.svg"
   }
 ]
