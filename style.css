@@ -43,6 +43,8 @@ h1 {
 #answer {
     font-size: 16pt;
     font-weight: bold;
+    margin: 0;
+    padding: 0;
     /* padding-top: 5px; */
 }
 
