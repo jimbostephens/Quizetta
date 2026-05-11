@@ -13,6 +13,7 @@ const revealBtn = document.getElementById('reveal-btn');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 const loadingMessageEl = document.getElementById('loading-message');
+const questionImageEl = document.getElementById('question-image');
 
 // Fetch and parse data from a JSON file
 function fetchQuestions() {
@@ -57,7 +58,7 @@ function getNextQuestion(isFromHistory = false) {
         if (availableQuestions.length === 0) {
             // Reset the available questions from the main list
             availableQuestions = [...allQuestions];
-            
+
             // Clear history and reset index to avoid repetition immediately
             questionHistory = [];
             currentQuestionIndex = -1;
@@ -81,9 +82,25 @@ function getPreviousQuestion() {
 }
 
 function displayQuestion(question) {
+    // 1. Update text content
     questionEl.textContent = question.question;
     answerEl.textContent = question.answer;
+
+    // 2. Handle the image logic
+    if (question.image && question.image.trim() !== "") {
+        // Set the source and reveal the element
+        questionImageEl.src = question.image;
+        questionImageEl.classList.remove('hidden');
+
+        // Bonus: Clear "alt" text so it doesn't give away the answer
+        questionImageEl.alt = "Question Image"; 
+    } else {
+        // Clear the source and hide the element if no image exists
+        questionImageEl.src = "";
+        questionImageEl.classList.add('hidden');
+    }
 }
+
 
 function updateButtonVisibility() {
     prevBtn.classList.toggle('disabled-btn', currentQuestionIndex <= 0);
