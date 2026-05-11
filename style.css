@@ -24,20 +24,22 @@ body {
 
 h1 {
     color: #004225;
-    font-size: 36pt;
+    font-size: 34pt;
     margin: 0;
     font-weight: bold;
-    padding: 20px;
+    padding: 10px;
 }
 
 #loading-message {
     font-size: 16pt;
     margin: 5px 0;
+padding: 5px 0 0;
 }
 
 #question {
     font-size: 16pt;
     margin: 5px 0;
+padding: 5px 0 0;
 }
 
 #answer {
