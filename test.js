@@ -1,4 +1,4 @@
-const JSON_URL = 'q.json';
+const JSON_URL = 'test.json';
 
 // Arrays to manage question state
 let allQuestions = [];
