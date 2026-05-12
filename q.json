@@ -2138,11 +2138,6 @@
     "image": "images/flags/0116.svg"
   },
   {
-    "question": "Which self-governing territory's flag is this?",
-    "answer": "American Samoa",
-    "image": "images/flags/0119.svg"
-  },
-  {
     "question": "Which country's flag is this?",
     "answer": "Austria",
     "image": "images/flags/0120.svg"
@@ -2379,7 +2374,7 @@
   },
 {
     "question": "Which country's flag is this?",
-    "answer": "The United Kingdom of Great Britain and Northern Ireland (the UK)",
+    "answer": "The United Kingdom (Great Britain)",
     "image": "images/flags/0702.svg"
   },
 {
