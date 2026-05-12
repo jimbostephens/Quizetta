@@ -2110,7 +2110,7 @@
   {
     "question": "Which country's flag is this?",
     "answer": "Antigua and Barbuda",
-    "image": "images/flags/0106.svg"
+    "image": "images/flags/0107.svg"
   },
   {
     "question": "Which country's flag is this?",
@@ -2526,5 +2526,536 @@
     "question": "Who painted Las Meninas, shown below?",
     "answer": "Diego Velázquez",
     "image": "images/art/04221213.webp"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Kenya",
+    "image": "images/flags/1105.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Kyrgyzstan",
+    "image": "images/flags/1107.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Cambodia",
+    "image": "images/flags/1108.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "North Korea (Democratic People's Republic of Korea)",
+    "image": "images/flags/1116.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "South Korea (Republic of Korea)",
+    "image": "images/flags/1118.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Kuwait",
+    "image": "images/flags/1123.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Kazakhstan",
+    "image": "images/flags/1126.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Laos (Lao People's Democratic Republic)",
+    "image": "images/flags/1201.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Lebanon",
+    "image": "images/flags/1202.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Saint Lucia",
+    "image": "images/flags/1203.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Liechtenstein",
+    "image": "images/flags/1209.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Sri Lanka",
+    "image": "images/flags/1211.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Liberia",
+    "image": "images/flags/1218.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Lesotho",
+    "image": "images/flags/1219.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Lithuania",
+    "image": "images/flags/1220.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Luxembourg",
+    "image": "images/flags/1221.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Latvia",
+    "image": "images/flags/1222.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Libya",
+    "image": "images/flags/1225.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Morocco",
+    "image": "images/flags/1301.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Monaco",
+    "image": "images/flags/1303.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Moldova",
+    "image": "images/flags/1304.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Montenegro",
+    "image": "images/flags/1305.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Madagascar",
+    "image": "images/flags/1307.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "The Marshall Islands",
+    "image": "images/flags/1308.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "North Macedonia",
+    "image": "images/flags/1311.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Mali",
+    "image": "images/flags/1312.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Myanmar (Burma)",
+    "image": "images/flags/1313.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Mongolia",
+    "image": "images/flags/1314.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Mauritania",
+    "image": "images/flags/1318.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Malta",
+    "image": "images/flags/1320.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Mauritius",
+    "image": "images/flags/1321.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Maldives",
+    "image": "images/flags/1322.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Malawi",
+    "image": "images/flags/1323.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Mexico",
+    "image": "images/flags/1324.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Malaysia",
+    "image": "images/flags/1325.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": ""Mozambique,
+    "image": "images/flags/1326.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Namibia",
+    "image": "images/flags/1401.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Niger",
+    "image": "images/flags/1405.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Nigeria",
+    "image": "images/flags/1407.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Nicaragua",
+    "image": "images/flags/1409.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "The Netherlands",
+    "image": "images/flags/1412.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Norway",
+    "image": "images/flags/1415.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Nepal",
+    "image": "images/flags/1416.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Nauru",
+    "image": "images/flags/1418.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "New Zealand",
+    "image": "images/flags/1426.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Oman",
+    "image": "images/flags/1513.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Panama",
+    "image": "images/flags/1601.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Peru",
+    "image": "images/flags/1605.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Papua New Guinea",
+    "image": "images/flags/1607.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "The Philippines",
+    "image": "images/flags/1608.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Pakistan",
+    "image": "images/flags/1611.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Poland",
+    "image": "images/flags/1612.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Puerto Rico",
+    "image": "images/flags/1618.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Palestine",
+    "image": "images/flags/1619.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Portugal",
+    "image": "images/flags/1620.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Palau",
+    "image": "images/flags/1623.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Paraguay",
+    "image": "images/flags/1625.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Qatar",
+    "image": "images/flags/1701.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Romania",
+    "image": "images/flags/1815.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Serbia",
+    "image": "images/flags/1819.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Russia",
+    "image": "images/flags/1821.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Rwanda",
+    "image": "images/flags/1823.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Saudi Arabia",
+    "image": "images/flags/1901.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Solomon Islands",
+    "image": "images/flags/1902.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Seychelles",
+    "image": "images/flags/1903.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Sudan",
+    "image": "images/flags/1904.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Sweden",
+    "image": "images/flags/1905.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Singapore",
+    "image": "images/flags/1907.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Slovenia",
+    "image": "images/flags/1909.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Slovakia",
+    "image": "images/flags/1911.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Sierra Leone",
+    "image": "images/flags/1912.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "San Marino",
+    "image": "images/flags/1913.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Senegal",
+    "image": "images/flags/1914.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Somalia",
+    "image": "images/flags/1915.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Suriname",
+    "image": "images/flags/1918.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "South Sudan",
+    "image": "images/flags/1919.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "São Tomé and Príncipe",
+    "image": "images/flags/1920.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "El Salvador",
+    "image": "images/flags/1922.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Syria",
+    "image": "images/flags/1925.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Eswatini",
+    "image": "images/flags/1926.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Togo",
+    "image": "images/flags/2007.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Thailand",
+    "image": "images/flags/2008.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Tajikistan",
+    "image": "images/flags/2010.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Timor-Leste (East Timor)",
+    "image": "images/flags/2012.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Turkmenistan",
+    "image": "images/flags/2013.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Tunisia",
+    "image": "images/flags/2014.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Tonga",
+    "image": "images/flags/2015.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Turkey (Republic of Türkiye)",
+    "image": "images/flags/2018.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Trinidad and Tobago",
+    "image": "images/flags/2020.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Tuvalu",
+    "image": "images/flags/2022.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Taiwan",
+    "image": "images/flags2023/.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Tanzania",
+    "image": "images/flags/2026.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Ukraine",
+    "image": "images/flags/2121.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Uganda",
+    "image": "images/flags/2107.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "The United States of America",
+    "image": "images/flags/2119.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Uruguay",
+    "image": "images/flags/2125.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Uzbekistan",
+    "image": "images/flags/2126.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Saint Vincent and the Grenadines",
+    "image": "images/flags/2203.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Venezuela",
+    "image": "images/flags/2205.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Vietnam",
+    "image": "images/flags/2214.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Vanuatu",
+    "image": "images/flags/2221.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Samoa",
+    "image": "images/flags/2319.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Yemen",
+    "image": "images/flags/2505.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "South Africa",
+    "image": "images/flags/2601.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Zambia",
+    "image": "images/flags/2613.svg"
+  },
+{
+    "question": "Which country's flag is this?",
+    "answer": "Zimbabwe",
+    "image": "images/flags/2623.svg"
   }
 ]
+
