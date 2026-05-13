@@ -87,5 +87,4 @@ nextBtn.addEventListener('click', () => getNextQuestion());
 prevBtn.addEventListener('click', getPreviousQuestion);
 
 // Start the quiz
-i
-    nitQuiz();
+initQuiz();
