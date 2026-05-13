@@ -1,22 +1,30 @@
-const sqlite3 = require('sqlite3').verbose();
+const sqlite3 = require('sqlite3');
 const { open } = require('sqlite');
+const path = require('path');
 
 exports.handler = async (event, context) => {
-  // 1. Open the database file
-  const db = await open({
-    filename: './quizetta.db',
-    driver: sqlite3.Database
-  });
+  try {
+    // This points to the root of your project where quizetta.db lives
+    const dbPath = path.resolve(__dirname, '../../quizetta.db');
 
-  // 2. Ask for ONE random question
-  const question = await db.get('SELECT * FROM questions ORDER BY RANDOM() LIMIT 1');
+    const db = await open({
+      filename: dbPath,
+      driver: sqlite3.Database
+    });
 
-  await db.close();
+    const question = await db.get('SELECT * FROM questions ORDER BY RANDOM() LIMIT 1');
+    await db.close();
 
-  // 3. Send it back to your website
-  return {
-    statusCode: 200,
-    body: JSON.stringify(question),
-  };
+    return {
+      statusCode: 200,
+      body: JSON.stringify(question),
+    };
+  } catch (error) {
+    // This helps you see the error in the Netlify Function logs
+    console.error("Database Error:", error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: "Failed to fetch question", details: error.message }),
+    };
+  }
 };
-
