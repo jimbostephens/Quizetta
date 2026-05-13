@@ -1,8 +1,7 @@
-const JSON_URL = 'q.json';
+// The URL of your Netlify Function
+const FUNCTION_URL = '/.netlify/functions/getQuestion';
 
-// Arrays to manage question state
-let allQuestions = [];
-let availableQuestions = [];
+// State management (We only need history now)
 let questionHistory = [];
 let currentQuestionIndex = -1;
 
@@ -15,60 +14,43 @@ const nextBtn = document.getElementById('next-btn');
 const loadingMessageEl = document.getElementById('loading-message');
 const questionImageEl = document.getElementById('question-image');
 
-// Fetch and parse data from a JSON file
-function fetchQuestions() {
-    fetch(JSON_URL)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            allQuestions = data;
-            availableQuestions = [...allQuestions];
-
-            loadingMessageEl.classList.add('hidden');
-            questionEl.classList.remove('hidden');
-            revealBtn.classList.remove('hidden');
-            nextBtn.classList.remove('hidden');
-
-            if (availableQuestions.length === 0) {
-                questionEl.textContent = 'No questions available. Please check your JSON data.';
-                revealBtn.classList.add('hidden');
-                nextBtn.classList.add('hidden');
-            } else {
-                getNextQuestion(false);
-            }
-        })
-        .catch(error => {
-            loadingMessageEl.textContent = 'Failed to load questions. Please check the URL and file format.';
-        });
+// Instead of downloading everything, we just grab the first question
+async function initQuiz() {
+    try {
+        await getNextQuestion();
+        loadingMessageEl.classList.add('hidden');
+        questionEl.classList.remove('hidden');
+        revealBtn.classList.remove('hidden');
+        nextBtn.classList.remove('hidden');
+    } catch (error) {
+        loadingMessageEl.textContent = 'Failed to connect to the quiz database.';
+    }
 }
 
-// Display a random question and hide the answer
-function getNextQuestion(isFromHistory = false) {
+// Fetch ONE random question from the server
+async function getNextQuestion() {
     answerEl.classList.add('hidden');
 
-    if (isFromHistory && currentQuestionIndex < questionHistory.length - 1) {
+    // If we are navigating forward through history
+    if (currentQuestionIndex < questionHistory.length - 1) {
         currentQuestionIndex++;
         displayQuestion(questionHistory[currentQuestionIndex]);
-    } else {
-        // Check if all questions have been used
-        if (availableQuestions.length === 0) {
-            // Reset the available questions from the main list
-            availableQuestions = [...allQuestions];
-
-            // Clear history and reset index to avoid repetition immediately
-            questionHistory = [];
-            currentQuestionIndex = -1;
+    } 
+    // Otherwise, fetch a BRAND NEW random question from SQLite
+    else {
+        try {
+            const response = await fetch(FUNCTION_URL);
+            if (!response.ok) throw new Error('Network response was not ok');
+            
+            const newQuestion = await response.json();
+            
+            questionHistory.push(newQuestion);
+            currentQuestionIndex++;
+            displayQuestion(newQuestion);
+        } catch (error) {
+            console.error("Error fetching question:", error);
+            questionEl.textContent = "Error loading next question...";
         }
-
-        const randomIndex = Math.floor(Math.random() * availableQuestions.length);
-        const newQuestion = availableQuestions.splice(randomIndex, 1)[0];
-        questionHistory.push(newQuestion);
-        currentQuestionIndex++;
-        displayQuestion(newQuestion);
     }
     updateButtonVisibility();
 }
@@ -82,41 +64,28 @@ function getPreviousQuestion() {
 }
 
 function displayQuestion(question) {
-    // 1. Update text content
     questionEl.textContent = question.question;
     answerEl.textContent = question.answer;
 
-    // 2. Handle the image logic
     if (question.image && question.image.trim() !== "") {
-        // Set the source and reveal the element
         questionImageEl.src = question.image;
         questionImageEl.classList.remove('hidden');
-        
-        // Bonus: Clear "alt" text so it doesn't give away the answer
         questionImageEl.alt = "Question Image"; 
     } else {
-        // Clear the source and hide the element if no image exists
         questionImageEl.src = "";
         questionImageEl.classList.add('hidden');
     }
 }
 
-
 function updateButtonVisibility() {
     prevBtn.classList.toggle('disabled-btn', currentQuestionIndex <= 0);
-    // The next button is always enabled unless the quiz is being reset
-    nextBtn.classList.remove('hidden');
-    revealBtn.classList.remove('hidden');
 }
 
-// Event listeners for the buttons
-revealBtn.addEventListener('click', () => {
-    answerEl.classList.remove('hidden');
-});
-
-nextBtn.addEventListener('click', () => getNextQuestion(false));
-
+// Event listeners
+revealBtn.addEventListener('click', () => answerEl.classList.remove('hidden'));
+nextBtn.addEventListener('click', () => getNextQuestion());
 prevBtn.addEventListener('click', getPreviousQuestion);
 
-// Initial fetch and display when the page loads
-fetchQuestions();
+// Start the quiz
+i
+    nitQuiz();
