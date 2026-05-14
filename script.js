@@ -89,7 +89,7 @@ prevBtn.addEventListener('click', getPreviousQuestion);
 
 // Keyboard Shortcuts
 document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space') {
+    if (e.code === 'ArrowDown') {
         e.preventDefault();
         answerEl.classList.remove('hidden');
     } else if (e.code === 'ArrowRight' || e.code === 'Enter') {
