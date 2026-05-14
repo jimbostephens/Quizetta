@@ -81,8 +81,29 @@ function updateButtonVisibility() {
     prevBtn.classList.toggle('disabled-btn', currentQuestionIndex <= 0);
 }
 
-const seen = JSON.parse(localStorage.getItem('seenIds') || '[]');
-const response = await fetch(`/.netlify/functions/getQuestion?exclude=${seen.join(',')}`);
+async function getNextQuestion() {
+    // 1. Pull the list of seen IDs from the browser's memory
+    let seenIds = JSON.parse(localStorage.getItem('quizetta_seen') || '[]');
+
+    // 2. Fetch the next question, telling the server what to ignore
+    const response = await fetch(`/.netlify/functions/get-question?exclude=${seenIds.join(',')}`);
+    const data = await response.json();
+
+    if (data && data.id) {
+        // 3. Add the new ID to our list
+        seenIds.push(data.id);
+
+        // 4. Safety valve: if they've seen 90% of your 1000 questions, 
+        // clear the list so the site doesn't get stuck.
+        if (seenIds.length > 900) {
+            seenIds = [];
+        }
+
+        localStorage.setItem('quizetta_seen', JSON.stringify(seenIds));
+
+        // ... Your existing code to display data.question, data.answer, etc. ...
+    }
+}
 
 // Event listeners
 revealBtn.addEventListener('click', () => answerEl.classList.remove('hidden'));
