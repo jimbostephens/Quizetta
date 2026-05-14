@@ -5,39 +5,45 @@ const path = require('path');
 exports.handler = async (event) => {
     let db;
     try {
-        const dbPath = path.resolve(__dirname, '../../quizetta.db');
+        // Use process.cwd() to ensure we find the file in the root directory on Netlify
+        const dbPath = path.join(process.cwd(), 'quizetta.db');
         const exclude = event.queryStringParameters.exclude;
 
-        // 1. Open Connection
         db = await open({
             filename: dbPath,
             driver: sqlite3.Database
         });
 
-        // 2. Build Query
-        let query = (exclude && exclude.length > 0)
-            ? `SELECT * FROM questions WHERE id NOT IN (${exclude}) ORDER BY RANDOM() LIMIT 1`
-            : `SELECT * FROM questions ORDER BY RANDOM() LIMIT 1`;
+        let query = "";
+        let question = null;
 
-        // 3. Execute
-        let question = await db.get(query);
+        // Only use "NOT IN" if exclude has actual numbers (e.g., "1,2,3")
+        // We also use regex to ensure the string only contains numbers and commas for security
+        if (exclude && /^[0-9,]+$/.test(exclude)) {
+            query = `SELECT * FROM questions WHERE id NOT IN (${exclude}) ORDER BY RANDOM() LIMIT 1`;
+            question = await db.get(query);
+        }
 
-        // 4. Fallback if all questions are excluded
-        if (!question && exclude) {
-            question = await db.get(`SELECT * FROM questions ORDER BY RANDOM() LIMIT 1`);
+        // If no exclusion or if the exclusion query returned nothing (pool empty)
+        if (!question) {
+            query = `SELECT * FROM questions ORDER BY RANDOM() LIMIT 1`;
+            question = await db.get(query);
         }
 
         return {
             statusCode: 200,
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(question)
+            headers: { 
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*" // Helps with mobile browser permissions
+            },
+            body: JSON.stringify(question || { error: "No questions found" })
         };
 
     } catch (error) {
         console.error("Database Error:", error);
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: "Failed to fetch question", details: error.message })
+            body: JSON.stringify({ error: "Failed to fetch question", message: error.message })
         };
     } finally {
         if (db) await db.close();
