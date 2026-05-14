@@ -1,5 +1,3 @@
-Here's the style.css too
-
 body {
     font-family: garamond, serif;
     display: flex;
@@ -101,6 +99,10 @@ button {
 
 #reveal-btn {
     background-color: #004225;
+}
+
+.hidden {
+    display: none;
 }
 
 .disabled-btn {
