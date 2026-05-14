@@ -1,39 +1,81 @@
-/* Update these specific blocks in your style.css */
+/* --- Core Styles (Kept Exactly as they were) --- */
+body {
+    font-family: garamond, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ececec;
+    margin: 0;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
 
 .container {
     text-align: center;
     background-color: #dedede;
-    padding: 20px; /* Increased padding for better breathing room */
+    padding: 20px; /* Uniform padding for mobile */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     width: 90%;
-    margin-top: 20px; /* Add some space below the H1 */
+    margin-top: 20px;
 }
 
+h1 {
+    color: #004225;
+    font-size: 34pt;
+    margin: 0;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#loading-message, #question, #answer {
+    font-size: 16pt;
+    margin: 0;
+    padding: 5px 0;
+}
+
+#answer {
+    font-weight: bold;
+}
+
+/* --- Fixed the Button Positioning --- */
+/* Changed 'fixed' to 'relative' so they don't cover the question on small screens */
 .buttons {
-    /* Changed from fixed to static/relative for better mobile behavior */
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-#question-image {
-    max-width: 100%;  
-    max-height: 40vh; /* Slightly smaller to ensure buttons fit on screen */
-    height: auto;
-    margin: 15px 0;   
-    border-radius: 4px;
-    display: block;   /* Ensures it centers correctly */
-    margin-left: auto;
-    margin-right: auto;
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
 }
 
-/* Ensure buttons don't look squashed on small screens */
+/* --- Cleaned up the Double-Hidden bug --- */
+.hidden {
+    display: none !important;
+}
+
+#question-image {
+    max-width: 100%;  
+    max-height: 45vh;
+    height: auto;
+    margin: 10px auto;   
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: block; /* Ensures centering works */
+}
+
+/* --- Kept your specific button designs --- */
 button {
-    padding: 12px 20px; /* More "tappable" for mobile thumbs */
+    padding: 10px; /* Slightly taller for mobile touch */
     font-size: 14pt;
     cursor: pointer;
     border: none;
@@ -41,9 +83,31 @@ button {
     color: #fff;
     background-color: #666666;
     transition: background-color 0.3s ease;
-    width: 100%;      /* Full width on mobile containers */
-    max-width: 280px; /* But don't let them get too giant */
+    width: 190px;
     font-family: inherit;
     font-weight: bold;
-    margin-bottom: 10px;
+}
+
+#reveal-btn {
+    background-color: #004225; /* Your specific Green */
+}
+
+.disabled-btn {
+    background-color: #a0a0a0;
+}
+
+/* --- Footer (Kept same) --- */
+.footer-links {
+    margin-top: auto; /* Pushes to bottom naturally */
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links a {
+    display: block;
+    margin-bottom: 5px;
+    text-decoration: underline;
+    color: #666666;
 }
