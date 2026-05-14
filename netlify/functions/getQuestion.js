@@ -30,14 +30,16 @@ exports.handler = async (event) => {
             question = await db.get(query);
         }
 
-        return {
-            statusCode: 200,
-            headers: { 
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*" // Helps with mobile browser permissions
-            },
-            body: JSON.stringify(question || { error: "No questions found" })
-        };
+return {
+    statusCode: 200,
+    headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*", // Allows any browser to read this
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "GET, OPTION"
+    },
+    body: JSON.stringify(question || { error: "No questions found" })
+};
 
     } catch (error) {
         console.error("Database Error:", error);
