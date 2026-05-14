@@ -1,4 +1,4 @@
-const FUNCTION_URL = '/.netlify/functions/getQuestion'; // Double-check this filename!
+const FUNCTION_URL = 'https://quizetta.netlify.app/.netlify/functions/getQuestion';
 
 let questionHistory = [];
 let currentQuestionIndex = -1;
