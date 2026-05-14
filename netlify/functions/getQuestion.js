@@ -6,7 +6,10 @@ exports.handler = async (event, context) => {
     const excludeIds = event.queryStringParameters.exclude;
     
     const dbPath = path.resolve(__dirname, 'quizetta.db');
-    const db = new sqlite3.Database(dbPath);
+const db = new sqlite3.Database(dbPath, sqlite3.OPEN_READONLY, (err) => {
+    if (err) console.error("Database opening error: ", err);
+});
+
 
     return new Promise((resolve, reject) => {
         // 2. Build the query safely
