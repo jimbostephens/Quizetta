@@ -81,6 +81,9 @@ function updateButtonVisibility() {
     prevBtn.classList.toggle('disabled-btn', currentQuestionIndex <= 0);
 }
 
+const seen = JSON.parse(localStorage.getItem('seenIds') || '[]');
+const response = await fetch(`/.netlify/functions/getQuestion?exclude=${seen.join(',')}`);
+
 // Event listeners
 revealBtn.addEventListener('click', () => answerEl.classList.remove('hidden'));
 nextBtn.addEventListener('click', () => getNextQuestion());
