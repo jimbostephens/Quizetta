@@ -1,4 +1,5 @@
-/* --- Core Styles (Kept Exactly as they were) --- */
+Here's the style.css too
+
 body {
     font-family: garamond, serif;
     display: flex;
@@ -15,12 +16,12 @@ body {
 .container {
     text-align: center;
     background-color: #dedede;
-    padding: 20px; /* Uniform padding for mobile */
+    padding: 0 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     width: 90%;
-    margin-top: 20px;
+    /* margin: 20px 0; */
 }
 
 h1 {
@@ -31,23 +32,35 @@ h1 {
     padding: 10px;
 }
 
-#loading-message, #question, #answer {
+#loading-message {
     font-size: 16pt;
     margin: 0;
-    padding: 5px 0;
+    padding: 5px 0 0;
+}
+
+#question {
+    font-size: 16pt;
+    margin: 0;
+    padding: 5px 0 0;
 }
 
 #answer {
+    font-size: 16pt;
     font-weight: bold;
+    margin: 0;
+    padding: 5px 0 0;
+    /* padding-top: 5px; */
 }
 
-/* --- Fixed the Button Positioning --- */
-/* Changed 'fixed' to 'relative' so they don't cover the question on small screens */
 .buttons {
-    margin-top: 20px;
+    position: fixed;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 10;
     width: 100%;
 }
 
@@ -58,7 +71,6 @@ h1 {
     gap: 10px;
 }
 
-/* --- Cleaned up the Double-Hidden bug --- */
 .hidden {
     display: none !important;
 }
@@ -67,15 +79,14 @@ h1 {
     max-width: 100%;  
     max-height: 45vh;
     height: auto;
-    margin: 10px auto;   
+    margin: 2px 0;   
     border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    display: block; /* Ensures centering works */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Makes it look polished */
+
 }
 
-/* --- Kept your specific button designs --- */
 button {
-    padding: 10px; /* Slightly taller for mobile touch */
+    padding: 5px 5px;
     font-size: 14pt;
     cursor: pointer;
     border: none;
@@ -89,17 +100,18 @@ button {
 }
 
 #reveal-btn {
-    background-color: #004225; /* Your specific Green */
+    background-color: #004225;
 }
 
 .disabled-btn {
     background-color: #a0a0a0;
 }
 
-/* --- Footer (Kept same) --- */
 .footer-links {
-    margin-top: auto; /* Pushes to bottom naturally */
-    padding: 20px 0;
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -110,4 +122,12 @@ button {
     margin-bottom: 5px;
     text-decoration: underline;
     color: #666666;
+}
+
+.footer-links a:last-child {
+    margin-bottom: 0;
+}
+
+.email-link {
+    white-space: nowrap;
 }
