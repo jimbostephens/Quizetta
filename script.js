@@ -3,12 +3,12 @@ const FUNCTION_URL = 'https://quizetta.netlify.app/.netlify/functions/getQuestio
 let questionHistory = [];
 let currentQuestionIndex = -1;
 
-// DOM elements
+// Elements
 const questionEl = document.getElementById('question');
 const answerEl = document.getElementById('answer');
 const revealBtn = document.getElementById('reveal-btn');
-const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
+const prevBtn = document.getElementById('prev-btn');
 const loadingMessageEl = document.getElementById('loading-message');
 const questionImageEl = document.getElementById('question-image');
 
@@ -17,15 +17,13 @@ async function initQuiz() {
         await getNextQuestion();
         loadingMessageEl.classList.add('hidden');
         [questionEl, revealBtn, nextBtn].forEach(el => el.classList.remove('hidden'));
-    } catch (error) {
-        console.error("Init error:", error);
-        loadingMessageEl.textContent = 'Failed to connect to the quiz database.';
+    } catch (e) {
+        loadingMessageEl.textContent = 'Server busy. Please refresh.';
     }
 }
 
 async function getNextQuestion() {
-    // Disable button briefly to prevent "double-click" faff
-    nextBtn.disabled = true;
+    nextBtn.disabled = true; 
     answerEl.classList.add('hidden');
 
     if (currentQuestionIndex < questionHistory.length - 1) {
@@ -34,25 +32,21 @@ async function getNextQuestion() {
         nextBtn.disabled = false;
     } else {
         try {
-            const seenIds = JSON.parse(localStorage.getItem('quizetta_seen') || '[]');
-            const response = await fetch(`${FUNCTION_URL}?exclude=${seenIds.join(',')}`);
+            const seen = JSON.parse(localStorage.getItem('quizetta_seen') || '[]');
+            const response = await fetch(`${FUNCTION_URL}?exclude=${seen.join(',')}`);
+            
+            if (!response.ok) throw new Error();
+            const data = await response.json();
 
-            if (!response.ok) throw new Error('Server error');
-            const newQuestion = await response.json();
-
-            if (newQuestion && newQuestion.id) {
-                seenIds.push(newQuestion.id);
-                // Keep the "seen" list manageable
-                const updatedSeen = seenIds.length > 800 ? [] : seenIds;
-                localStorage.setItem('quizetta_seen', JSON.stringify(updatedSeen));
-
-                questionHistory.push(newQuestion);
+            if (data && data.id) {
+                seen.push(data.id);
+                localStorage.setItem('quizetta_seen', JSON.stringify(seen.length > 800 ? [] : seen));
+                questionHistory.push(data);
                 currentQuestionIndex++;
-                displayQuestion(newQuestion);
+                displayQuestion(data);
             }
-        } catch (error) {
-            console.error("Fetch error:", error);
-            questionEl.textContent = "Connection lost. Try refreshing?";
+        } catch (err) {
+            questionEl.textContent = "Trouble connecting. Refreshing usually fixes this!";
         } finally {
             nextBtn.disabled = false;
         }
@@ -60,26 +54,14 @@ async function getNextQuestion() {
     updateButtonVisibility();
 }
 
-function getPreviousQuestion() {
-    if (currentQuestionIndex > 0) {
-        currentQuestionIndex--;
-        displayQuestion(questionHistory[currentQuestionIndex]);
-        updateButtonVisibility();
-    }
-}
-
-function displayQuestion(question) {
-    if (!question) return;
-    questionEl.textContent = question.question;
-    answerEl.textContent = question.answer;
-    answerEl.classList.add('hidden');
-
-    if (question.image && question.image.trim() !== "") {
-        questionImageEl.src = question.image;
+function displayQuestion(q) {
+    questionEl.textContent = q.question;
+    answerEl.textContent = q.answer;
+    if (q.image) {
+        questionImageEl.src = q.image;
         questionImageEl.classList.remove('hidden');
     } else {
         questionImageEl.classList.add('hidden');
-        questionImageEl.src = "";
     }
 }
 
@@ -87,22 +69,27 @@ function updateButtonVisibility() {
     prevBtn.classList.toggle('disabled-btn', currentQuestionIndex <= 0);
 }
 
-// Event Listeners
+// Controls
 revealBtn.addEventListener('click', () => answerEl.classList.remove('hidden'));
 nextBtn.addEventListener('click', getNextQuestion);
-prevBtn.addEventListener('click', getPreviousQuestion);
+prevBtn.addEventListener('click', () => {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        displayQuestion(questionHistory[currentQuestionIndex]);
+        updateButtonVisibility();
+    }
+});
 
-// Keyboard Shortcuts (ArrowDown to reveal)
+// Mobile-friendly Keyboard support (for those with BT keyboards/tablets)
 document.addEventListener('keydown', (e) => {
-    if (e.code === 'ArrowDown') {
-        e.preventDefault();
-        answerEl.classList.remove('hidden');
-    } else if (e.code === 'ArrowRight' || e.code === 'Enter') {
-        e.preventDefault();
-        getNextQuestion();
-    } else if (e.code === 'ArrowLeft') {
-        e.preventDefault();
-        getPreviousQuestion();
+    if (e.code === 'ArrowDown') { e.preventDefault(); answerEl.classList.remove('hidden'); }
+    if (e.code === 'ArrowRight' || e.code === 'Enter') { e.preventDefault(); getNextQuestion(); }
+    if (e.code === 'ArrowLeft') { 
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+            displayQuestion(questionHistory[currentQuestionIndex]);
+            updateButtonVisibility();
+        }
     }
 });
 
