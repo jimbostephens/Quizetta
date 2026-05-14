@@ -5,49 +5,43 @@ const path = require('path');
 exports.handler = async (event) => {
     let db;
     try {
-        // Use process.cwd() to ensure we find the file in the root directory on Netlify
-        const dbPath = path.join(process.cwd(), 'quizetta.db');
-        const exclude = event.queryStringParameters.exclude;
+        // More robust pathing for Netlify
+        const dbPath = path.resolve(__dirname, '../../quizetta.db');
+        const exclude = event.queryStringParameters.exclude || "";
 
         db = await open({
             filename: dbPath,
             driver: sqlite3.Database
         });
 
-        let query = "";
-        let question = null;
+        let question;
 
-        // Only use "NOT IN" if exclude has actual numbers (e.g., "1,2,3")
-        // We also use regex to ensure the string only contains numbers and commas for security
+        // Secure check for exclude IDs
         if (exclude && /^[0-9,]+$/.test(exclude)) {
-            query = `SELECT * FROM questions WHERE id NOT IN (${exclude}) ORDER BY RANDOM() LIMIT 1`;
-            question = await db.get(query);
+            question = await db.get(`SELECT * FROM questions WHERE id NOT IN (${exclude}) ORDER BY RANDOM() LIMIT 1`);
         }
 
-        // If no exclusion or if the exclusion query returned nothing (pool empty)
+        // Fallback
         if (!question) {
-            query = `SELECT * FROM questions ORDER BY RANDOM() LIMIT 1`;
-            question = await db.get(query);
+            question = await db.get(`SELECT * FROM questions ORDER BY RANDOM() LIMIT 1`);
         }
 
-return {
-    statusCode: 200,
-    headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*", // Allows any browser to read this
-        "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Methods": "GET, OPTION"
-    },
-    body: JSON.stringify(question || { error: "No questions found" })
-};
+        await db.close(); // Close before returning
+
+        return {
+            statusCode: 200,
+            headers: {
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*"
+            },
+            body: JSON.stringify(question)
+        };
 
     } catch (error) {
-        console.error("Database Error:", error);
+        if (db) await db.close();
         return {
             statusCode: 500,
-            body: JSON.stringify({ error: "Failed to fetch question", message: error.message })
+            body: JSON.stringify({ error: error.message })
         };
-    } finally {
-        if (db) await db.close();
     }
 };
