@@ -4,7 +4,7 @@ const fs = require('fs');
 
 exports.handler = async (event) => {
     // Attempt to find the DB in the root (one level up from functions)
-    const dbPath = path.resolve(__dirname, '..', 'quizetta.db');
+    const dbPath = path.resolve(__dirname, '..', '..', 'quizetta.db');
     
     // LOGGING FOR DEBUGGING
     console.log("Function Dir:", __dirname);
