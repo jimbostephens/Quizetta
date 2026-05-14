@@ -1,22 +1,33 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
+const fs = require('fs');
 
-exports.handler = async (event, context) => {
-    // 1. Get the IDs and make sure they are just numbers/commas to prevent errors
-    const excludeIds = event.queryStringParameters.exclude;
+exports.handler = async (event) => {
+    // Attempt to find the DB in the root (one level up from functions)
+    const dbPath = path.resolve(__dirname, '..', 'quizetta.db');
     
-const dbPath = path.resolve(__dirname, '..', 'quizetta.db');
+    // LOGGING FOR DEBUGGING
+    console.log("Function Dir:", __dirname);
+    console.log("Looking for DB at:", dbPath);
+    console.log("Does file exist?", fs.existsSync(dbPath));
 
-const db = new sqlite3.Database(dbPath, sqlite3.OPEN_READONLY, (err) => {
-    if (err) console.error("Database opening error: ", err);
-});
+    if (!fs.existsSync(dbPath)) {
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ 
+                error: "Database file not found", 
+                lookedAt: dbPath,
+                filesInDir: fs.readdirSync(path.resolve(__dirname, '..')) 
+            })
+        };
+    }
 
+    const db = new sqlite3.Database(dbPath, sqlite3.OPEN_READONLY);
+    const excludeIds = event.queryStringParameters.exclude;
 
-    return new Promise((resolve, reject) => {
-        // 2. Build the query safely
+    return new Promise((resolve) => {
         let query = "SELECT * FROM questions";
         
-        // Only add the filter if we actually have IDs to exclude
         if (excludeIds && /^[0-9,]+$/.test(excludeIds)) {
             query += ` WHERE id NOT IN (${excludeIds})`;
         }
@@ -24,20 +35,16 @@ const db = new sqlite3.Database(dbPath, sqlite3.OPEN_READONLY, (err) => {
         query += " ORDER BY RANDOM() LIMIT 1";
 
         db.get(query, [], (err, row) => {
+            db.close();
             if (err) {
-                console.error("Database error:", err);
-                resolve({ 
-                    statusCode: 500, 
-                    body: JSON.stringify({ error: "Failed to fetch question" }) 
-                });
+                resolve({ statusCode: 500, body: JSON.stringify({ error: err.message }) });
             } else {
                 resolve({
                     statusCode: 200,
                     headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(row || { message: "No more questions!" }),
+                    body: JSON.stringify(row)
                 });
             }
-            db.close();
         });
     });
 };
