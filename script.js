@@ -1,7 +1,7 @@
 // The URL of your Netlify Function
 const FUNCTION_URL = '/.netlify/functions/getQuestion';
 
-// State management (We only need history now)
+// State management
 let questionHistory = [];
 let currentQuestionIndex = -1;
 
@@ -14,7 +14,29 @@ const nextBtn = document.getElementById('next-btn');
 const loadingMessageEl = document.getElementById('loading-message');
 const questionImageEl = document.getElementById('question-image');
 
-// Instead of downloading everything, we just grab the first question
+/**
+ * Persistence Logic: 
+ * Tracks the rowids of the last 100 questions in the browser.
+ */
+function getRecentIds() {
+    const seen = localStorage.getItem('seenQuestions');
+    return seen ? JSON.parse(seen) : [];
+}
+
+function saveIdToHistory(id) {
+    if (!id) return;
+    let seen = getRecentIds();
+    
+    // Add new ID if it's not already the most recent
+    seen.push(id);
+    
+    // Maintain the sliding window of 100
+    if (seen.length > 100) {
+        seen.shift();
+    }
+    localStorage.setItem('seenQuestions', JSON.stringify(seen));
+}
+
 async function initQuiz() {
     try {
         await getNextQuestion();
@@ -27,23 +49,29 @@ async function initQuiz() {
     }
 }
 
-// Fetch ONE random question from the server
 async function getNextQuestion() {
     answerEl.classList.add('hidden');
 
-    // If we are navigating forward through history
+    // If we are navigating forward through history (prev button was used)
     if (currentQuestionIndex < questionHistory.length - 1) {
         currentQuestionIndex++;
         displayQuestion(questionHistory[currentQuestionIndex]);
     } 
-    // Otherwise, fetch a BRAND NEW random question from SQLite
+    // Otherwise, fetch a BRAND NEW random question
     else {
         try {
-            const response = await fetch(FUNCTION_URL);
+            // Get the list of IDs to exclude from localStorage
+            const exclude = getRecentIds().join(',');
+            const response = await fetch(`${FUNCTION_URL}?exclude=${exclude}`);
+            
             if (!response.ok) throw new Error('Network response was not ok');
-            
+
             const newQuestion = await response.json();
-            
+
+            // Store the rowid in localStorage to avoid repeats
+            saveIdToHistory(newQuestion.rowid);
+
+            // Store the full question in session history for the 'back' button
             questionHistory.push(newQuestion);
             currentQuestionIndex++;
             displayQuestion(newQuestion);
@@ -78,7 +106,12 @@ function displayQuestion(question) {
 }
 
 function updateButtonVisibility() {
-    prevBtn.classList.toggle('disabled-btn', currentQuestionIndex <= 0);
+    // Only show/enable previous button if we aren't at the start of the session
+    if (currentQuestionIndex <= 0) {
+        prevBtn.classList.add('disabled-btn');
+    } else {
+        prevBtn.classList.remove('disabled-btn');
+    }
 }
 
 // Event listeners
