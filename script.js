@@ -1,12 +1,13 @@
+// The URL of your Netlify Function
 const FUNCTION_URL = '/.netlify/functions/getQuestion';
 
 // State management
-let questionHistory = []; // Questions already seen in this session
+let questionHistory = [];    // Questions seen in this current session (for the Back button)
 let currentQuestionIndex = -1;
-let prefetchBuffer = []; // Questions waiting to be shown
-const BUFFER_SIZE = 3; // Keep 3 questions ready at all times
+let prefetchBuffer = [];     // Questions pre-loaded and ready to show
+const BUFFER_SIZE = 3;       // How many questions to keep "in the chamber"
 
-// DOM elements (keeping your existing ones)
+// DOM element references
 const questionEl = document.getElementById('question');
 const answerEl = document.getElementById('answer');
 const revealBtn = document.getElementById('reveal-btn');
@@ -15,12 +16,17 @@ const nextBtn = document.getElementById('next-btn');
 const loadingMessageEl = document.getElementById('loading-message');
 const questionImageEl = document.getElementById('question-image');
 
-// Helper for LocalStorage (same as before)
+/** 
+ * Persistence: Get the last 100 rowids from browser storage
+ */
 function getRecentIds() {
     const seen = localStorage.getItem('seenQuestions');
     return seen ? JSON.parse(seen) : [];
 }
 
+/** 
+ * Persistence: Save a rowid and keep the list capped at 100
+ */
 function saveIdToHistory(id) {
     if (!id) return;
     let seen = getRecentIds();
@@ -29,12 +35,13 @@ function saveIdToHistory(id) {
     localStorage.setItem('seenQuestions', JSON.stringify(seen));
 }
 
-// 1. New Prefetch Logic
+/**
+ * Prefetching: Background fetch to fill the buffer
+ */
 async function fillBuffer() {
-    // Fill the buffer until it reaches the desired size
     while (prefetchBuffer.length < BUFFER_SIZE) {
         try {
-            // Include IDs from localStorage AND IDs currently in the prefetch buffer
+            // Combine historical IDs and IDs already waiting in the buffer to avoid duplicates
             const recentIds = getRecentIds();
             const bufferedIds = prefetchBuffer.map(q => q.rowid);
             const exclude = [...new Set([...recentIds, ...bufferedIds])].join(',');
@@ -45,20 +52,21 @@ async function fillBuffer() {
             const newQuestion = await response.json();
             prefetchBuffer.push(newQuestion);
         } catch (error) {
-            console.error("Prefetch error:", error);
-            break; // Stop trying if there's an error
+            console.error("Prefetching error:", error);
+            break; // Stop loop on error to prevent infinite calls
         }
     }
 }
 
+/**
+ * Startup: Fill the buffer then show the first question
+ */
 async function initQuiz() {
     try {
-        // Initial load: get enough to start the quiz
         await fillBuffer();
         
         if (prefetchBuffer.length > 0) {
             loadingMessageEl.classList.add('hidden');
-            // Move the first buffered item to the display
             await getNextQuestion(); 
             
             questionEl.classList.remove('hidden');
@@ -70,18 +78,20 @@ async function initQuiz() {
     }
 }
 
+/**
+ * Navigation: Handle the 'Next' logic
+ */
 async function getNextQuestion() {
     answerEl.classList.add('hidden');
 
-    // Case A: Moving forward through session history (back button was used)
+    // Case 1: User clicked 'Back' previously and is now going 'Forward' through existing session history
     if (currentQuestionIndex < questionHistory.length - 1) {
         currentQuestionIndex++;
         displayQuestion(questionHistory[currentQuestionIndex]);
     } 
-    // Case B: Need a new question
+    // Case 2: User needs a brand new question (Pull from buffer)
     else {
         if (prefetchBuffer.length > 0) {
-            // Pull from our pre-loaded buffer (INSTANT)
             const newQuestion = prefetchBuffer.shift();
             
             saveIdToHistory(newQuestion.rowid);
@@ -89,10 +99,10 @@ async function getNextQuestion() {
             currentQuestionIndex++;
             displayQuestion(newQuestion);
             
-            // Refill the buffer in the background
+            // Refill the buffer in the background while user reads
             fillBuffer(); 
         } else {
-            // Fallback if buffer is empty (shouldn't happen often)
+            // Emergency fallback if buffer is empty
             questionEl.textContent = "Loading...";
             await fillBuffer();
             if (prefetchBuffer.length > 0) getNextQuestion();
@@ -100,11 +110,21 @@ async function getNextQuestion() {
     }
     updateButtonVisibility();
 }
+
+/**
+ * Navigation: Handle the 'Back' logic
+ */
+function getPreviousQuestion() {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
         displayQuestion(questionHistory[currentQuestionIndex]);
         updateButtonVisibility();
     }
 }
 
+/**
+ * UI: Render the question data to the page
+ */
 function displayQuestion(question) {
     questionEl.textContent = question.question;
     answerEl.textContent = question.answer;
@@ -119,13 +139,11 @@ function displayQuestion(question) {
     }
 }
 
+/**
+ * UI: Manage button states
+ */
 function updateButtonVisibility() {
-    // Only show/enable previous button if we aren't at the start of the session
-    if (currentQuestionIndex <= 0) {
-        prevBtn.classList.add('disabled-btn');
-    } else {
-        prevBtn.classList.remove('disabled-btn');
-    }
+    prevBtn.classList.toggle('disabled-btn', currentQuestionIndex <= 0);
 }
 
 // Event listeners
