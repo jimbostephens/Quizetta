@@ -2,6 +2,19 @@ const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 const fs = require('fs');
 
+// Inside getQuestion.js
+// Update your query variable:
+
+let query = "SELECT rowid AS id, * FROM questions";
+
+// The rest of the logic remains the same:
+if (excludeIds && /^[0-9,]+$/.test(excludeIds)) {
+    // This now works because 'id' is mapped to 'rowid'
+    query += ` WHERE rowid NOT IN (${excludeIds})`;
+}
+
+query += " ORDER BY RANDOM() LIMIT 1";
+
 exports.handler = async (event) => {
     // Attempt to find the DB in the root (one level up from functions)
     const dbPath = path.resolve(__dirname, '..', '..', 'quizetta.db');
