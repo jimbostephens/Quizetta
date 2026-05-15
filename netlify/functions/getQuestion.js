@@ -1,63 +1,40 @@
-const sqlite3 = require('sqlite3').verbose();
+const sqlite3 = require('sqlite3');
+const { open } = require('sqlite');
 const path = require('path');
-const fs = require('fs');
-
-// Inside getQuestion.js
-// Update your query variable:
-
-let query = "SELECT rowid AS id, * FROM questions";
-
-// The rest of the logic remains the same:
-if (excludeIds && /^[0-9,]+$/.test(excludeIds)) {
-    // This now works because 'id' is mapped to 'rowid'
-    query += ` WHERE rowid NOT IN (${excludeIds})`;
-}
-
-query += " ORDER BY RANDOM() LIMIT 1";
 
 exports.handler = async (event) => {
-    // Attempt to find the DB in the root (one level up from functions)
-    const dbPath = path.resolve(__dirname, '..', '..', 'quizetta.db');
-    
-    // LOGGING FOR DEBUGGING
-    console.log("Function Dir:", __dirname);
-    console.log("Looking for DB at:", dbPath);
-    console.log("Does file exist?", fs.existsSync(dbPath));
+    let db;
+    try {
+        const dbPath = path.resolve(__dirname, '../../quizetta.db');
+        const excludeIds = event.queryStringParameters.exclude || "";
 
-    if (!fs.existsSync(dbPath)) {
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ 
-                error: "Database file not found", 
-                lookedAt: dbPath,
-                filesInDir: fs.readdirSync(path.resolve(__dirname, '..')) 
-            })
-        };
-    }
+        db = await open({ filename: dbPath, driver: sqlite3.Database });
 
-    const db = new sqlite3.Database(dbPath, sqlite3.OPEN_READONLY);
-    const excludeIds = event.queryStringParameters.exclude;
-
-    return new Promise((resolve) => {
-        let query = "SELECT * FROM questions";
+        let query = 'SELECT * FROM questions';
         
+        // Only add the filter if we actually have IDs to exclude
         if (excludeIds && /^[0-9,]+$/.test(excludeIds)) {
             query += ` WHERE id NOT IN (${excludeIds})`;
         }
+        
+        query += ' ORDER BY RANDOM() LIMIT 1';
 
-        query += " ORDER BY RANDOM() LIMIT 1";
+        let question = await db.get(query);
 
-        db.get(query, [], (err, row) => {
-            db.close();
-            if (err) {
-                resolve({ statusCode: 500, body: JSON.stringify({ error: err.message }) });
-            } else {
-                resolve({
-                    statusCode: 200,
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(row)
-                });
-            }
-        });
-    });
+        // Fallback: If for some reason we run out of questions, just grab any random one
+        if (!question) {
+            question = await db.get('SELECT * FROM questions ORDER BY RANDOM() LIMIT 1');
+        }
+
+        await db.close();
+
+        return {
+            statusCode: 200,
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(question),
+        };
+    } catch (error) {
+        if (db) await db.close();
+        return { statusCode: 500, body: JSON.stringify({ error: error.message }) };
+    }
 };
