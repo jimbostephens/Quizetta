@@ -2,7 +2,7 @@
 const FUNCTION_URL = '/.netlify/functions/getQuestion';
 
 // State management
-let questionHistory = [];    // Questions seen in this current session (for the Back button)
+let questionHistory = [];    // Questions seen in this current session (for Back button)
 let currentQuestionIndex = -1;
 let prefetchBuffer = [];     // Questions pre-loaded and ready to show
 const BUFFER_SIZE = 3;       // How many questions to keep "in the chamber"
@@ -59,22 +59,46 @@ async function fillBuffer() {
 }
 
 /**
- * Startup: Fill the buffer then show the first question
+ * Startup: Handles normal layout initialization OR single question preview mode
  */
 async function initQuiz() {
     try {
-        await fillBuffer();
-        
-        if (prefetchBuffer.length > 0) {
+        // Check if there is an ?id=XYZ in the browser URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetId = urlParams.get('id');
+
+        if (targetId) {
+            // --- PREVIEW MODE ---
             loadingMessageEl.classList.add('hidden');
-            await getNextQuestion(); 
             
+            const response = await fetch(`${FUNCTION_URL}?id=${targetId}`);
+            if (!response.ok) throw new Error('Failed to fetch specific question');
+            
+            const specificQuestion = await response.json();
+            displayQuestion(specificQuestion);
+            
+            // Show question and reveal button, but keep navigation hidden
             questionEl.classList.remove('hidden');
             revealBtn.classList.remove('hidden');
-            nextBtn.classList.remove('hidden');
-            prevBtn.classList.remove('hidden');
+            nextBtn.classList.add('hidden');
+            prevBtn.classList.add('hidden');
+        } else {
+            // --- STANDARD GAMEPLAY MODE ---
+            await fillBuffer();
+            
+            if (prefetchBuffer.length > 0) {
+                loadingMessageEl.classList.add('hidden');
+                await getNextQuestion(); 
+                
+                // Reveal ALL gameplay elements simultaneously
+                questionEl.classList.remove('hidden');
+                revealBtn.classList.remove('hidden');
+                nextBtn.classList.remove('hidden');
+                prevBtn.classList.remove('hidden');
+            }
         }
     } catch (error) {
+        console.error("Initialization error:", error);
         loadingMessageEl.textContent = 'Failed to connect to the quiz database.';
     }
 }
@@ -141,7 +165,7 @@ function displayQuestion(question) {
 }
 
 /**
- * UI: Manage button states
+ * UI: Manage button states (Only used in normal gameplay)
  */
 function updateButtonVisibility() {
     prevBtn.classList.toggle('disabled-btn', currentQuestionIndex <= 0);
@@ -152,5 +176,5 @@ revealBtn.addEventListener('click', () => answerEl.classList.remove('hidden'));
 nextBtn.addEventListener('click', () => getNextQuestion());
 prevBtn.addEventListener('click', getPreviousQuestion);
 
-// Start the quiz
+// Kick off the quiz
 initQuiz();
