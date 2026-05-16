@@ -72,6 +72,7 @@ async function initQuiz() {
             questionEl.classList.remove('hidden');
             revealBtn.classList.remove('hidden');
             nextBtn.classList.remove('hidden');
+            prevBtn.classList.remove('hidden');
         }
     } catch (error) {
         loadingMessageEl.textContent = 'Failed to connect to the quiz database.';
