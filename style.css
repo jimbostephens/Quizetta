@@ -6,7 +6,7 @@ body {
     min-height: 100vh;
     background-color: #ececec;
     margin: 0;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     box-sizing: border-box;
     position: relative;
 }
@@ -117,7 +117,7 @@ button {
 
 .footer-links a {
     display: block;
-    /* margin-bottom: 5px; */
+    margin-bottom: 5px;
     text-decoration: underline;
     color: #666666;
 }
