@@ -1,4 +1,3 @@
-// The URL of your Netlify Function
 const FUNCTION_URL = '/.netlify/functions/getQuestion';
 
 // State management
@@ -77,11 +76,11 @@ async function initQuiz() {
             const specificQuestion = await response.json();
             displayQuestion(specificQuestion);
             
-            // Show question and reveal button, but keep navigation hidden
+            // Show buttons
             questionEl.classList.remove('hidden');
             revealBtn.classList.remove('hidden');
-            nextBtn.classList.add('hidden');
-            prevBtn.classList.add('hidden');
+            nextBtn.classList.remove('hidden');
+            prevBtn.classList.remove('hidden');
         } else {
             // --- STANDARD GAMEPLAY MODE ---
             await fillBuffer();
@@ -176,5 +175,5 @@ revealBtn.addEventListener('click', () => answerEl.classList.remove('hidden'));
 nextBtn.addEventListener('click', () => getNextQuestion());
 prevBtn.addEventListener('click', getPreviousQuestion);
 
-// Kick off the quiz
+// Start the quiz
 initQuiz();
