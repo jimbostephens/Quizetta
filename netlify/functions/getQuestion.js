@@ -6,23 +6,30 @@ exports.handler = async (event) => {
     let db;
     try {
         const dbPath = path.resolve(__dirname, '../../quizetta.db');
+        
+        // Grab query parameters from the URL if they exist
         const excludeIds = event.queryStringParameters.exclude || "";
+        const specificId = event.queryStringParameters.id || "";
 
         db = await open({ filename: dbPath, driver: sqlite3.Database });
 
-        // Select rowid explicitly since it's not a standard column
         let query = 'SELECT rowid, * FROM questions';
-        let params = [];
 
-        if (excludeIds && /^[0-9,]+$/.test(excludeIds)) {
-            query += ` WHERE rowid NOT IN (${excludeIds})`;
+        // CASE 1: If a specific ID is requested for previewing
+        if (specificId && /^[0-9]+$/.test(specificId)) {
+            query += ` WHERE rowid = ${specificId}`;
+        } 
+        // CASE 2: Standard random gameplay with exclusion filtering
+        else {
+            if (excludeIds && /^[0-9,]+$/.test(excludeIds)) {
+                query += ` WHERE rowid NOT IN (${excludeIds})`;
+            }
+            query += ' ORDER BY RANDOM() LIMIT 1';
         }
-
-        query += ' ORDER BY RANDOM() LIMIT 1';
 
         let question = await db.get(query);
 
-        // Fallback: if we've excluded too many or something goes wrong
+        // Fallback: If specific ID wasn't found or exclude filter emptied the pool
         if (!question) {
             question = await db.get('SELECT rowid, * FROM questions ORDER BY RANDOM() LIMIT 1');
         }
