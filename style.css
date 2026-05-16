@@ -27,7 +27,7 @@ h1 {
     font-size: 34pt;
     margin: 0;
     font-weight: bold;
-    padding: 10px;
+    padding: 5px;
 }
 
 #loading-message {
@@ -79,7 +79,7 @@ h1 {
     height: auto;
     margin: 2px 0;   
     border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Makes it look polished */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 
 }
 
@@ -99,10 +99,6 @@ button {
 
 #reveal-btn {
     background-color: #004225;
-}
-
-.hidden {
-    display: none;
 }
 
 .disabled-btn {
