@@ -107,6 +107,7 @@ async function initQuiz() {
  */
 async function getNextQuestion() {
     answerEl.classList.add('hidden');
+    questionImageEl.classList.add('hidden');
 
     // Case 1: User clicked 'Back' previously and is now going 'Forward' through existing session history
     if (currentQuestionIndex < questionHistory.length - 1) {
