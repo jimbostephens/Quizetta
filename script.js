@@ -107,7 +107,10 @@ async function initQuiz() {
  */
 async function getNextQuestion() {
     answerEl.classList.add('hidden');
+
+    // Force the image to hide and clear its source completely
     questionImageEl.classList.add('hidden');
+    questionImageEl.src = "";
 
     // Case 1: User clicked 'Back' previously and is now going 'Forward' through existing session history
     if (currentQuestionIndex < questionHistory.length - 1) {
