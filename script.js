@@ -24,13 +24,13 @@ function getRecentIds() {
 }
 
 /** 
- * Persistence: Save a rowid and keep the list capped at 100
+ * Persistence: Save a rowid and keep the list capped at 500
  */
 function saveIdToHistory(id) {
     if (!id) return;
     let seen = getRecentIds();
     seen.push(id);
-    if (seen.length > 100) seen.shift();
+    if (seen.length > 500) seen.shift();
     localStorage.setItem('seenQuestions', JSON.stringify(seen));
 }
 
