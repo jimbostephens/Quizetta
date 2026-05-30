@@ -4,7 +4,7 @@ const FUNCTION_URL = '/.netlify/functions/getQuestion';
 let questionHistory = [];    // Questions seen in this current session (for Back button)
 let currentQuestionIndex = -1;
 let prefetchBuffer = [];     // Questions pre-loaded and ready to show
-const BUFFER_SIZE = 3;       // How many questions to keep "in the chamber"
+const BUFFER_SIZE = 5;       // How many questions to keep "in the chamber"
 
 // DOM element references
 const questionEl = document.getElementById('question');
@@ -16,7 +16,7 @@ const loadingMessageEl = document.getElementById('loading-message');
 const questionImageEl = document.getElementById('question-image');
 
 /** 
- * Persistence: Get the last 100 rowids from browser storage
+ * Persistence: Get the last 500 rowids from browser storage
  */
 function getRecentIds() {
     const seen = localStorage.getItem('seenQuestions');
@@ -131,7 +131,7 @@ async function getNextQuestion() {
             fillBuffer(); 
         } else {
             // Emergency fallback if buffer is empty
-            questionEl.textContent = "Loading...";
+            questionEl.textContent = "Loading questions...";
             await fillBuffer();
             if (prefetchBuffer.length > 0) getNextQuestion();
         }
