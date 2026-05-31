@@ -5,6 +5,7 @@ let questionHistory = [];    // Questions seen in this current session (for Back
 let currentQuestionIndex = -1;
 let prefetchBuffer = [];     // Questions pre-loaded and ready to show
 const BUFFER_SIZE = 5;       // How many questions to keep "in the chamber"
+let staticFirstQuestion = null; // CHANGE 1: Holds the randomly chosen first question to prevent duplicates
 
 // DOM element references
 const questionEl = document.getElementById('question');
@@ -15,16 +16,14 @@ const nextBtn = document.getElementById('next-btn');
 const loadingMessageEl = document.getElementById('loading-message');
 const questionImageEl = document.getElementById('question-image');
 
-/** 
- * Persistence: Get the last 500 rowids from browser storage
+/** * Persistence: Get the last 500 rowids from browser storage
  */
 function getRecentIds() {
     const seen = localStorage.getItem('seenQuestions');
     return seen ? JSON.parse(seen) : [];
 }
 
-/** 
- * Persistence: Save a rowid and keep the list capped at 500
+/** * Persistence: Save a rowid and keep the list capped at 500
  */
 function saveIdToHistory(id) {
     if (!id) return;
@@ -40,14 +39,16 @@ function saveIdToHistory(id) {
 async function fillBuffer() {
     while (prefetchBuffer.length < BUFFER_SIZE) {
         try {
-            // Combine historical IDs and IDs already waiting in the buffer to avoid duplicates
+            // CHANGE 2: Include historical IDs, buffered IDs, AND the first random JSON question ID
             const recentIds = getRecentIds();
             const bufferedIds = prefetchBuffer.map(q => q.rowid);
-            const exclude = [...new Set([...recentIds, ...bufferedIds])].join(',');
+            const staticId = staticFirstQuestion ? [staticFirstQuestion.rowid] : [];
+
+            const exclude = [...new Set([...recentIds, ...bufferedIds, ...staticId])].join(',');
 
             const response = await fetch(`${FUNCTION_URL}?exclude=${exclude}`);
             if (!response.ok) throw new Error('Fetch failed');
-            
+
             const newQuestion = await response.json();
             prefetchBuffer.push(newQuestion);
         } catch (error) {
@@ -69,31 +70,78 @@ async function initQuiz() {
         if (targetId) {
             // --- PREVIEW MODE ---
             loadingMessageEl.classList.add('hidden');
-            
+
             const response = await fetch(`${FUNCTION_URL}?id=${targetId}`);
             if (!response.ok) throw new Error('Failed to fetch specific question');
-            
+
             const specificQuestion = await response.json();
             displayQuestion(specificQuestion);
-            
+
             // Show buttons
             questionEl.classList.remove('hidden');
             revealBtn.classList.remove('hidden');
             nextBtn.classList.remove('hidden');
             prevBtn.classList.remove('hidden');
         } else {
-            // --- STANDARD GAMEPLAY MODE ---
-            await fillBuffer();
-            
-            if (prefetchBuffer.length > 0) {
+            // --- CHANGE 3: STANDARD GAMEPLAY MODE (Random Local JSON Picker with Fallback) ---
+            try {
+                // 1. Fetch the local static JSON array
+                const staticResponse = await fetch('q.json');
+                if (!staticResponse.ok) throw new Error(`HTTP ${staticResponse.status}`);
+
+                const questionArray = await staticResponse.json();
+
+                // Structural Validation: Ensure we actually got a valid array list
+                if (!Array.isArray(questionArray) || questionArray.length === 0) {
+                    throw new Error("q.json is empty or not formatted as an array list.");
+                }
+
+                // 2. Pick a completely RANDOM question object from the array
+                const randomIndex = Math.floor(Math.random() * questionArray.length);
+                const chosenQuestion = questionArray[randomIndex];
+
+                // Data Integrity Check: Ensure our random pick has a valid rowid property
+                if (!chosenQuestion || chosenQuestion.rowid === undefined || chosenQuestion.rowid === null) {
+                    throw new Error("The randomly selected question is missing a rowid property.");
+                }
+
+                staticFirstQuestion = chosenQuestion;
+
+                // 3. Mount and instantly display the random question
                 loadingMessageEl.classList.add('hidden');
-                await getNextQuestion(); 
-                
-                // Reveal ALL gameplay elements simultaneously
+
+                saveIdToHistory(staticFirstQuestion.rowid);
+                questionHistory.push(staticFirstQuestion);
+                currentQuestionIndex++;
+                displayQuestion(staticFirstQuestion);
+
+                // 4. Unhide gameplay elements all at once
                 questionEl.classList.remove('hidden');
                 revealBtn.classList.remove('hidden');
                 nextBtn.classList.remove('hidden');
                 prevBtn.classList.remove('hidden');
+                updateButtonVisibility();
+
+                // 5. Fire off database prefetching quietly in the background
+                fillBuffer();
+
+            } catch (jsonError) {
+                // SAFETY FALLBACK: If anything happens to q.json, fall back to database initialization seamlessly
+                console.warn("Local random JSON load bypassed, falling back to database loading:", jsonError.message);
+
+                await fillBuffer();
+
+                if (prefetchBuffer.length > 0) {
+                    loadingMessageEl.classList.add('hidden');
+                    await getNextQuestion(); 
+
+                    questionEl.classList.remove('hidden');
+                    revealBtn.classList.remove('hidden');
+                    nextBtn.classList.remove('hidden');
+                    prevBtn.classList.remove('hidden');
+                } else {
+                    throw new Error("Both local JSON and database buffer failed to load.");
+                }
             }
         }
     } catch (error) {
@@ -121,12 +169,12 @@ async function getNextQuestion() {
     else {
         if (prefetchBuffer.length > 0) {
             const newQuestion = prefetchBuffer.shift();
-            
+
             saveIdToHistory(newQuestion.rowid);
             questionHistory.push(newQuestion);
             currentQuestionIndex++;
             displayQuestion(newQuestion);
-            
+
             // Refill the buffer in the background while user reads
             fillBuffer(); 
         } else {
