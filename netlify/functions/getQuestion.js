@@ -13,7 +13,7 @@ exports.handler = async (event) => {
 
         db = await open({ filename: dbPath, driver: sqlite3.Database });
 
-        let query = 'SELECT rowid, * FROM questions';
+        let query = 'SELECT rowid, question, answer, image FROM questions';
 
         // CASE 1: If a specific ID is requested for previewing
         if (specificId && /^[0-9]+$/.test(specificId)) {
