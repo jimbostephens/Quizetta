@@ -5,7 +5,6 @@ let questionHistory = [];    // Questions seen in this current session (for Back
 let currentQuestionIndex = -1;
 let prefetchBuffer = [];     // Questions pre-loaded and ready to show
 const BUFFER_SIZE = 5;       // How many questions to keep "in the chamber"
-let staticFirstQuestion = null; // Holds the initial static question ID to prevent duplicates
 
 // DOM element references
 const questionEl = document.getElementById('question');
@@ -16,14 +15,16 @@ const nextBtn = document.getElementById('next-btn');
 const loadingMessageEl = document.getElementById('loading-message');
 const questionImageEl = document.getElementById('question-image');
 
-/** * Persistence: Get the last 500 rowids from browser storage
+/** 
+ * Persistence: Get the last 500 rowids from browser storage
  */
 function getRecentIds() {
     const seen = localStorage.getItem('seenQuestions');
     return seen ? JSON.parse(seen) : [];
 }
 
-/** * Persistence: Save a rowid and keep the list capped at 500
+/** 
+ * Persistence: Save a rowid and keep the list capped at 500
  */
 function saveIdToHistory(id) {
     if (!id) return;
@@ -39,16 +40,14 @@ function saveIdToHistory(id) {
 async function fillBuffer() {
     while (prefetchBuffer.length < BUFFER_SIZE) {
         try {
-            // Combine historical IDs, buffered IDs, AND the static first question ID 
+            // Combine historical IDs and IDs already waiting in the buffer to avoid duplicates
             const recentIds = getRecentIds();
             const bufferedIds = prefetchBuffer.map(q => q.rowid);
-            const staticId = staticFirstQuestion ? [staticFirstQuestion.rowid] : [];
-
-            const exclude = [...new Set([...recentIds, ...bufferedIds, ...staticId])].join(',');
+            const exclude = [...new Set([...recentIds, ...bufferedIds])].join(',');
 
             const response = await fetch(`${FUNCTION_URL}?exclude=${exclude}`);
             if (!response.ok) throw new Error('Fetch failed');
-
+            
             const newQuestion = await response.json();
             prefetchBuffer.push(newQuestion);
         } catch (error) {
@@ -70,13 +69,13 @@ async function initQuiz() {
         if (targetId) {
             // --- PREVIEW MODE ---
             loadingMessageEl.classList.add('hidden');
-
+            
             const response = await fetch(`${FUNCTION_URL}?id=${targetId}`);
             if (!response.ok) throw new Error('Failed to fetch specific question');
-
+            
             const specificQuestion = await response.json();
             displayQuestion(specificQuestion);
-
+            
             // Show buttons
             questionEl.classList.remove('hidden');
             revealBtn.classList.remove('hidden');
@@ -84,48 +83,17 @@ async function initQuiz() {
             prevBtn.classList.remove('hidden');
         } else {
             // --- STANDARD GAMEPLAY MODE ---
-            try {
-                // 1. Try to fetch the local static JSON
-                const staticResponse = await fetch('q.json');
-                if (!staticResponse.ok) throw new Error(`HTTP ${staticResponse.status}`);
-
-                staticFirstQuestion = await staticResponse.json();
-
-                // 2. Clear loading message and instantly show the first question
+            await fillBuffer();
+            
+            if (prefetchBuffer.length > 0) {
                 loadingMessageEl.classList.add('hidden');
-
-                saveIdToHistory(staticFirstQuestion.rowid);
-                questionHistory.push(staticFirstQuestion);
-                currentQuestionIndex++;
-                displayQuestion(staticFirstQuestion);
-
-                // 3. Reveal gameplay elements immediately
+                await getNextQuestion(); 
+                
+                // Reveal ALL gameplay elements simultaneously
                 questionEl.classList.remove('hidden');
                 revealBtn.classList.remove('hidden');
                 nextBtn.classList.remove('hidden');
                 prevBtn.classList.remove('hidden');
-                updateButtonVisibility();
-
-                // 4. Fire off buffer prefetching quietly in the background
-                fillBuffer();
-
-            } catch (jsonError) {
-                // FALLBACK: If q.json fails/404s, seamlessly revert to the database method
-                console.warn("Local q.json failed, falling back to database loading:", jsonError);
-
-                await fillBuffer();
-
-                if (prefetchBuffer.length > 0) {
-                    loadingMessageEl.classList.add('hidden');
-                    await getNextQuestion(); 
-
-                    questionEl.classList.remove('hidden');
-                    revealBtn.classList.remove('hidden');
-                    nextBtn.classList.remove('hidden');
-                    prevBtn.classList.remove('hidden');
-                } else {
-                    throw new Error("Both local JSON and database buffer failed to load.");
-                }
             }
         }
     } catch (error) {
@@ -153,12 +121,12 @@ async function getNextQuestion() {
     else {
         if (prefetchBuffer.length > 0) {
             const newQuestion = prefetchBuffer.shift();
-
+            
             saveIdToHistory(newQuestion.rowid);
             questionHistory.push(newQuestion);
             currentQuestionIndex++;
             displayQuestion(newQuestion);
-
+            
             // Refill the buffer in the background while user reads
             fillBuffer(); 
         } else {
@@ -189,8 +157,7 @@ function displayQuestion(question) {
     questionEl.textContent = question.question;
     answerEl.textContent = question.answer;
 
-    // FIX: Safely checks type to ensure .trim() doesn't execute on null values
-    if (question.image && typeof question.image === 'string' && question.image.trim() !== "") {
+    if (question.image && question.image.trim() !== "") {
         questionImageEl.src = question.image;
         questionImageEl.classList.remove('hidden');
         questionImageEl.alt = "Question Image"; 
