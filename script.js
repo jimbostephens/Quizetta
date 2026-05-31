@@ -43,12 +43,12 @@ async function fillBuffer() {
             const recentIds = getRecentIds();
             const bufferedIds = prefetchBuffer.map(q => q.rowid);
             const staticId = staticFirstQuestion ? [staticFirstQuestion.rowid] : [];
-            
+
             const exclude = [...new Set([...recentIds, ...bufferedIds, ...staticId])].join(',');
 
             const response = await fetch(`${FUNCTION_URL}?exclude=${exclude}`);
             if (!response.ok) throw new Error('Fetch failed');
-            
+
             const newQuestion = await response.json();
             prefetchBuffer.push(newQuestion);
         } catch (error) {
@@ -70,44 +70,63 @@ async function initQuiz() {
         if (targetId) {
             // --- PREVIEW MODE ---
             loadingMessageEl.classList.add('hidden');
-            
+
             const response = await fetch(`${FUNCTION_URL}?id=${targetId}`);
             if (!response.ok) throw new Error('Failed to fetch specific question');
-            
+
             const specificQuestion = await response.json();
             displayQuestion(specificQuestion);
-            
+
             // Show buttons
             questionEl.classList.remove('hidden');
             revealBtn.classList.remove('hidden');
             nextBtn.classList.remove('hidden');
             prevBtn.classList.remove('hidden');
         } else {
-            // --- STANDARD GAMEPLAY MODE (Optimized for instant loading) ---
-            
-            // 1. Immediately fetch the static question from local JSON file
-            const staticResponse = await fetch('q.json');
-            if (!staticResponse.ok) throw new Error('Failed to fetch initial static question');
-            
-            staticFirstQuestion = await staticResponse.json();
-            
-            // 2. Clear loading message and instantly show the first question
-            loadingMessageEl.classList.add('hidden');
-            
-            saveIdToHistory(staticFirstQuestion.rowid);
-            questionHistory.push(staticFirstQuestion);
-            currentQuestionIndex++;
-            displayQuestion(staticFirstQuestion);
-            
-            // 3. Reveal gameplay elements immediately
-            questionEl.classList.remove('hidden');
-            revealBtn.classList.remove('hidden');
-            nextBtn.classList.remove('hidden');
-            prevBtn.classList.remove('hidden');
-            updateButtonVisibility();
+            // --- STANDARD GAMEPLAY MODE ---
+            try {
+                // 1. Try to fetch the local static JSON
+                const staticResponse = await fetch('q.json');
+                if (!staticResponse.ok) throw new Error(`HTTP ${staticResponse.status}`);
 
-            // 4. Now kick off the buffer filling asynchronously in the background
-            fillBuffer();
+                staticFirstQuestion = await staticResponse.json();
+
+                // 2. Clear loading message and instantly show the first question
+                loadingMessageEl.classList.add('hidden');
+
+                saveIdToHistory(staticFirstQuestion.rowid);
+                questionHistory.push(staticFirstQuestion);
+                currentQuestionIndex++;
+                displayQuestion(staticFirstQuestion);
+
+                // 3. Reveal gameplay elements immediately
+                questionEl.classList.remove('hidden');
+                revealBtn.classList.remove('hidden');
+                nextBtn.classList.remove('hidden');
+                prevBtn.classList.remove('hidden');
+                updateButtonVisibility();
+
+                // 4. Fire off buffer prefetching quietly in the background
+                fillBuffer();
+
+            } catch (jsonError) {
+                // FALLBACK: If q.json fails/404s, seamlessly revert to the database method
+                console.warn("Local q.json failed, falling back to database loading:", jsonError);
+
+                await fillBuffer();
+
+                if (prefetchBuffer.length > 0) {
+                    loadingMessageEl.classList.add('hidden');
+                    await getNextQuestion(); 
+
+                    questionEl.classList.remove('hidden');
+                    revealBtn.classList.remove('hidden');
+                    nextBtn.classList.remove('hidden');
+                    prevBtn.classList.remove('hidden');
+                } else {
+                    throw new Error("Both local JSON and database buffer failed to load.");
+                }
+            }
         }
     } catch (error) {
         console.error("Initialization error:", error);
@@ -134,12 +153,12 @@ async function getNextQuestion() {
     else {
         if (prefetchBuffer.length > 0) {
             const newQuestion = prefetchBuffer.shift();
-            
+
             saveIdToHistory(newQuestion.rowid);
             questionHistory.push(newQuestion);
             currentQuestionIndex++;
             displayQuestion(newQuestion);
-            
+
             // Refill the buffer in the background while user reads
             fillBuffer(); 
         } else {
@@ -170,7 +189,8 @@ function displayQuestion(question) {
     questionEl.textContent = question.question;
     answerEl.textContent = question.answer;
 
-    if (question.image && question.image.trim() !== "") {
+    // FIX: Safely checks type to ensure .trim() doesn't execute on null values
+    if (question.image && typeof question.image === 'string' && question.image.trim() !== "") {
         questionImageEl.src = question.image;
         questionImageEl.classList.remove('hidden');
         questionImageEl.alt = "Question Image"; 
